@@ -14,41 +14,44 @@
   <link rel="stylesheet" href="styl.css">
 </head>
 <body>
+ 
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"><div id="scroll-progress-bar"></div></div>
+ 
 <!-- LOADER -->
 <div class="loader" id="loader">
-  <div class="loader-identity">
-    <div class="loader-avatar">
-      <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <div class="loader-avatar-placeholder" style="display:none">AM</div>
-    </div>
-    <div class="loader-name-block">
-      <div class="loader-name">Abdulrahman Murad</div>
-      <div class="loader-role">Graphic Designer — Visual Identity</div>
-    </div>
-  </div>
-  <div class="loader-divider"></div>
-  <div class="loader-title">PORT<em>FOLIO</em></div>
-  <div class="loader-bar-wrap">
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-    <div class="loader-percent">Loading...</div>
-  </div>
+  <div class="loader-title">PORTFOLIO</div>
+  <div class="loader-subtitle">عبدالرحمن مراد — جرافيك ديزاينر</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
+ 
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
  
 <!-- GRID + NOISE -->
 <div class="grid-bg"></div>
 <div class="noise"></div>
  
-<!-- ══ NAVBAR ══ -->
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">
-    <div class="nav-logo-img">
-      <img src="./Img/تنزيل (6).png" alt="AM"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span class="nav-logo-img-placeholder" style="display:none">AM</span>
-    </div>
-    <span class="nav-logo-text">A. Murad</span>
-  </a>
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobile-overlay"></div>
+ 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#about" class="mobile-nav-link">About</a></li>
+    <li><a href="#services" class="mobile-nav-link">Services</a></li>
+    <li><a href="#work" class="mobile-nav-link">Work</a></li>
+    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+  </ul>
+  <a href="#contact" class="mobile-menu-cta mobile-nav-link">Hire Me →</a>
+</div>
+ 
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad" onerror="this.style.display='none'">
+    <span class="nav-logo-text">A. MURAD</span>
+  </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -56,31 +59,15 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Hire Me</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+  <button class="hamburger" id="hamburger" aria-label="فتح القائمة">
     <span></span><span></span><span></span>
   </button>
 </nav>
  
-<!-- Mobile Nav Overlay -->
-<div class="nav-mobile" id="mobileNav">
-  <a href="#about" class="mob-link">About</a>
-  <a href="#services" class="mob-link">Services</a>
-  <a href="#work" class="mob-link">Work</a>
-  <a href="#contact" class="mob-link">Contact</a>
-  <a href="#contact" class="mobile-cta">Hire Me</a>
-</div>
- 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-photo">
-    <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad — Graphic Designer"
-      onerror="this.style.display='none'">
-    <div class="hero-photo-placeholder" style="display:none">
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="35" r="20" stroke="white" stroke-width="2"/>
-        <path d="M10 90 C10 65 90 65 90 90" stroke="white" stroke-width="2" fill="none"/>
-      </svg>
-    </div>
+    <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad — Graphic Designer">
   </div>
   <div class="hero-vline"></div>
   <div class="hero-year">20<span>26</span></div>
@@ -91,7 +78,7 @@
       PORT<span class="outline">FOLIO</span>
     </div>
     <div class="hero-name-block">
-      <span class="fname">Abdulrahman</span>
+      <span class="fname">عبدالرحمن</span>
       <span class="lname">Murad</span>
     </div>
     <div class="hero-quote">"Exploring Creative Universes"</div>
@@ -103,7 +90,7 @@
   </div>
 </section>
  
-<!-- ══ MARQUEE ══ -->
+<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span>Graphic Design</span><span class="dot">●</span>
@@ -123,7 +110,7 @@
   </div>
 </div>
  
-<!-- ══ ABOUT ══ -->
+<!-- ABOUT -->
 <section id="about">
   <div>
     <div class="section-label reveal">About Me</div>
@@ -135,15 +122,15 @@
       أؤمن أن كل مشروع هو كون إبداعي مستقل يستحق الاستكشاف الكامل.
     </p>
     <div class="about-stats reveal reveal-delay-3">
-      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years Experience</span></div>
-      <div class="stat"><span class="stat-num">80+</span><span class="stat-label">Projects Done</span></div>
-      <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Happy Clients</span></div>
-      <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Awards Won</span></div>
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">سنوات خبرة</span></div>
+      <div class="stat"><span class="stat-num">80+</span><span class="stat-label">مشروع منجز</span></div>
+      <div class="stat"><span class="stat-num">40+</span><span class="stat-label">عميل سعيد</span></div>
+      <div class="stat"><span class="stat-num">12+</span><span class="stat-label">جائزة حُصدت</span></div>
     </div>
   </div>
   <div class="about-right">
     <div class="section-label reveal">Skills</div>
-    <div class="reveal reveal-delay-1" style="margin-bottom:40px; font-family:'Outfit',sans-serif; font-size:0.7rem; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:rgba(237,233,228,0.25);">Expertise Level</div>
+    <div class="expertise-label reveal reveal-delay-1">EXPERTISE LEVEL</div>
     <div class="about-skill-item reveal reveal-delay-1">
       <div class="skill-header"><span>Brand Identity</span><span>95%</span></div>
       <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
@@ -167,7 +154,7 @@
   </div>
 </section>
  
-<!-- ══ SERVICES ══ -->
+<!-- SERVICES -->
 <section id="services">
   <div class="section-label reveal">What I Do</div>
   <h2 class="section-title reveal reveal-delay-1">SERVICES</h2>
@@ -205,47 +192,47 @@
   </div>
 </section>
  
-<!-- ══ WORK ══ -->
+<!-- WORK -->
 <section id="work">
   <div class="section-label reveal">Selected Works</div>
   <h2 class="section-title reveal reveal-delay-1">PROJECTS</h2>
   <div class="work-filter reveal reveal-delay-2">
-    <button class="filter-btn active">All</button>
-    <button class="filter-btn">Branding</button>
-    <button class="filter-btn">Motion</button>
-    <button class="filter-btn">Print</button>
-    <button class="filter-btn">UI / UX</button>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="branding">Branding</button>
+    <button class="filter-btn" data-filter="motion">Motion</button>
+    <button class="filter-btn" data-filter="print">Print</button>
+    <button class="filter-btn" data-filter="ui">UI / UX</button>
   </div>
   <div class="work-grid">
-    <div class="work-item reveal" style="--i:0">
+    <div class="work-item reveal" style="--i:0" data-cat="branding">
       <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&h=600&fit=crop" alt="Nova Identity System">
       <div class="work-overlay">
         <div class="work-cat">Branding</div>
         <div class="work-name">Nova Identity System</div>
       </div>
     </div>
-    <div class="work-item reveal" style="--i:1">
+    <div class="work-item reveal" style="--i:1" data-cat="motion">
       <img src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=600&h=450&fit=crop" alt="Apex Reel">
       <div class="work-overlay">
         <div class="work-cat">Motion</div>
         <div class="work-name">Apex Reel 2025</div>
       </div>
     </div>
-    <div class="work-item reveal" style="--i:2">
+    <div class="work-item reveal" style="--i:2" data-cat="ui">
       <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=450&fit=crop" alt="Circle App">
       <div class="work-overlay">
         <div class="work-cat">UI Design</div>
         <div class="work-name">Circle App</div>
       </div>
     </div>
-    <div class="work-item reveal" style="--i:3">
+    <div class="work-item reveal" style="--i:3" data-cat="print">
       <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=600&h=450&fit=crop" alt="Grid Magazine">
       <div class="work-overlay">
         <div class="work-cat">Print</div>
         <div class="work-name">Grid Magazine</div>
       </div>
     </div>
-    <div class="work-item reveal" style="--i:4">
+    <div class="work-item reveal" style="--i:4" data-cat="branding">
       <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&h=450&fit=crop" alt="Luxe Box">
       <div class="work-overlay">
         <div class="work-cat">Packaging</div>
@@ -255,7 +242,7 @@
   </div>
 </section>
  
-<!-- ══ CONTACT ══ -->
+<!-- CONTACT -->
 <section id="contact">
   <div>
     <div class="section-label reveal">Get In Touch</div>
@@ -274,7 +261,7 @@
     </div>
     <div class="form-group">
       <label class="form-label">البريد الإلكتروني</label>
-      <input type="email" class="form-input" placeholder="email@example.com">
+      <input type="email" class="form-input" placeholder="email@example.com" dir="ltr">
     </div>
     <div class="form-group">
       <label class="form-label">المشروع</label>
@@ -288,7 +275,7 @@
   </div>
 </section>
  
-<!-- ══ FOOTER ══ -->
+<!-- FOOTER -->
 <footer>
   <span class="footer-copy">© 2026 Abdulrahman Murad. All Rights Reserved.</span>
   <div class="footer-socials">
@@ -298,6 +285,11 @@
     <a href="#">LinkedIn</a>
   </div>
 </footer>
+ 
+<!-- BACK TO TOP -->
+<button id="back-to-top" title="العودة للأعلى">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
  
  
 <script src="index.js"></script>
