@@ -16,26 +16,39 @@
 <body>
 <!-- LOADER -->
 <div class="loader" id="loader">
-  <div class="loader-title"><span>PORTFOLIO</span></div>
-  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <div class="loader-identity">
+    <div class="loader-avatar">
+      <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <div class="loader-avatar-placeholder" style="display:none">AM</div>
+    </div>
+    <div class="loader-name-block">
+      <div class="loader-name">Abdulrahman Murad</div>
+      <div class="loader-role">Graphic Designer — Visual Identity</div>
+    </div>
+  </div>
+  <div class="loader-divider"></div>
+  <div class="loader-title">PORT<em>FOLIO</em></div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <div class="loader-percent">Loading...</div>
+  </div>
 </div>
- 
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
  
 <!-- GRID + NOISE -->
 <div class="grid-bg"></div>
 <div class="noise"></div>
  
 <!-- ══ NAVBAR ══ -->
-<nav>
-  <div class="nav-logo">
-    <img
-      src="./Img/تنزيل (6).png"
-      alt="Abdulrahman Murad"
-    >
-    <span class="nav-logo-text">A. MURAD</span>
-  </div>
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-img">
+      <img src="./Img/تنزيل (6).png" alt="AM"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span class="nav-logo-img-placeholder" style="display:none">AM</span>
+    </div>
+    <span class="nav-logo-text">A. Murad</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -43,15 +56,31 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+ 
+<!-- Mobile Nav Overlay -->
+<div class="nav-mobile" id="mobileNav">
+  <a href="#about" class="mob-link">About</a>
+  <a href="#services" class="mob-link">Services</a>
+  <a href="#work" class="mob-link">Work</a>
+  <a href="#contact" class="mob-link">Contact</a>
+  <a href="#contact" class="mobile-cta">Hire Me</a>
+</div>
  
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-photo">
-    <img
-      src="./Img/تنزيل (6).png"
-      alt="Abdulrahman Murad — Graphic Designer"
-    >
+    <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad — Graphic Designer"
+      onerror="this.style.display='none'">
+    <div class="hero-photo-placeholder" style="display:none">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="35" r="20" stroke="white" stroke-width="2"/>
+        <path d="M10 90 C10 65 90 65 90 90" stroke="white" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
   </div>
   <div class="hero-vline"></div>
   <div class="hero-year">20<span>26</span></div>
@@ -114,7 +143,7 @@
   </div>
   <div class="about-right">
     <div class="section-label reveal">Skills</div>
-    <div class="reveal reveal-delay-1" style="margin-bottom:40px; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; letter-spacing:0.1em; color:rgba(255,255,255,0.3);">EXPERTISE LEVEL</div>
+    <div class="reveal reveal-delay-1" style="margin-bottom:40px; font-family:'Outfit',sans-serif; font-size:0.7rem; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:rgba(237,233,228,0.25);">Expertise Level</div>
     <div class="about-skill-item reveal reveal-delay-1">
       <div class="skill-header"><span>Brand Identity</span><span>95%</span></div>
       <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
