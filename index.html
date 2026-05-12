@@ -2,296 +2,396 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Graphic designer portfolio showcasing branding, social media, and advertising design services." />
+  <title>Graphic Designer Portfolio</title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styl.css">
+  <link rel="stylesheet" href="styl.css" />
 </head>
 <body>
- 
-<!-- SCROLL PROGRESS -->
-<div id="scroll-progress"><div id="scroll-progress-bar"></div></div>
- 
-<!-- LOADER -->
-<div class="loader" id="loader">
-  <div class="loader-title">PORTFOLIO</div>
-  <div class="loader-subtitle">عبدالرحمن مراد — جرافيك ديزاينر</div>
-  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-</div>
- 
-<!-- CURSOR -->
+
+<!-- CUSTOM CURSOR -->
 <div class="cursor" id="cursor"></div>
- 
-<!-- GRID + NOISE -->
-<div class="grid-bg"></div>
-<div class="noise"></div>
- 
-<!-- MOBILE OVERLAY -->
-<div class="mobile-overlay" id="mobile-overlay"></div>
- 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobile-menu">
-  <ul>
-    <li><a href="#about" class="mobile-nav-link">About</a></li>
-    <li><a href="#services" class="mobile-nav-link">Services</a></li>
-    <li><a href="#work" class="mobile-nav-link">Work</a></li>
-    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-  </ul>
-  <a href="#contact" class="mobile-menu-cta mobile-nav-link">Hire Me →</a>
-</div>
- 
-<!-- NAV -->
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
 <nav>
-  <div class="nav-logo">
-    <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad" onerror="this.style.display='none'">
-    <span class="nav-logo-text">A. MURAD</span>
-  </div>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-img">
+      <div class="nav-logo-placeholder"><img src="./Img/2.png" alt=""></div>
+    </div>
+    <div class="nav-logo-text">
+      Abdulrahman
+      <span>GRAPHIC DESIGNER</span>
+    </div>
+  </a>
+
   <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Hire Me</a>
-  <button class="hamburger" id="hamburger" aria-label="فتح القائمة">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
- 
+
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-photo">
-    <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad — Graphic Designer">
-  </div>
-  <div class="hero-vline"></div>
-  <div class="hero-year">20<span>26</span></div>
- 
-  <div class="hero-content">
-    <div class="hero-tag">Graphic Designer — Visual Identity</div>
-    <div class="hero-big-title">
-      PORT<span class="outline">FOLIO</span>
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Available for work</div>
+
+    <h1 class="hero-name glitch" data-text="ABDULRAHMAN MURAD">
+      ABDULRAHMAN<br><em>MURAD</em>
+    </h1>
+
+    <p class="hero-desc">
+      Passionate graphic designer and photographer creating clean and engaging visual experiences that help brands stand out — from branding identities to digital content.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Contact Me</a>
+      <a href="#services" class="btn-outline">My Services</a>
     </div>
-    <div class="hero-name-block">
-      <span class="fname">عبدالرحمن</span>
-      <span class="lname">Murad</span>
-    </div>
-    <div class="hero-quote">"Exploring Creative Universes"</div>
   </div>
- 
+
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-inner">
+        <div class="photo-placeholder">
+          <img src="./Img/تنزيل (6).png" alt="">
+        </div>
+      </div>
+
+      <div class="hero-tag">GRAPHIC DESIGNER ✦</div>
+    </div>
+  </div>
+
   <div class="hero-scroll">
     <div class="scroll-line"></div>
-    <span>Scroll</span>
+    scroll
   </div>
 </section>
- 
+
 <!-- MARQUEE -->
-<div class="marquee-wrap">
+<div class="marquee-section">
   <div class="marquee-track">
-    <span>Graphic Design</span><span class="dot">●</span>
-    <span>Visual Identity</span><span class="dot">●</span>
-    <span>Brand Strategy</span><span class="dot">●</span>
-    <span>Motion Graphics</span><span class="dot">●</span>
-    <span>UI Design</span><span class="dot">●</span>
-    <span>Typography</span><span class="dot">●</span>
-    <span>Illustration</span><span class="dot">●</span>
-    <span>Graphic Design</span><span class="dot">●</span>
-    <span>Visual Identity</span><span class="dot">●</span>
-    <span>Brand Strategy</span><span class="dot">●</span>
-    <span>Motion Graphics</span><span class="dot">●</span>
-    <span>UI Design</span><span class="dot">●</span>
-    <span>Typography</span><span class="dot">●</span>
-    <span>Illustration</span><span class="dot">●</span>
+    <span class="marquee-item">GRAPHIC DESIGN</span>
+    <span class="marquee-item">BRAND IDENTITY</span>
+    <span class="marquee-item">LOGO DESIGN</span>
+    <span class="marquee-item">SOCIAL MEDIA</span>
+    <span class="marquee-item">ADVERTISING</span>
+    <span class="marquee-item">COMPANY PROFILES</span>
+    <span class="marquee-item">PHOTOGRAPHY</span>
   </div>
 </div>
- 
+
 <!-- ABOUT -->
 <section id="about">
-  <div>
-    <div class="section-label reveal">About Me</div>
-    <h2 class="section-title reveal reveal-delay-1">WHO<br>AM I</h2>
-    <p class="about-text reveal reveal-delay-2">
-      أنا <strong>عبدالرحمن مراد</strong>، مصمم جرافيك متخصص في بناء
-      هويات بصرية قوية وتصميمات إبداعية تترك أثراً حقيقياً.
-      أعمل على تحويل الأفكار إلى تجارب بصرية مميزة تجمع بين الجمال والوظيفة.
-      أؤمن أن كل مشروع هو كون إبداعي مستقل يستحق الاستكشاف الكامل.
-    </p>
-    <div class="about-stats reveal reveal-delay-3">
-      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">سنوات خبرة</span></div>
-      <div class="stat"><span class="stat-num">80+</span><span class="stat-label">مشروع منجز</span></div>
-      <div class="stat"><span class="stat-num">40+</span><span class="stat-label">عميل سعيد</span></div>
-      <div class="stat"><span class="stat-num">12+</span><span class="stat-label">جائزة حُصدت</span></div>
+  <div class="about-photo-frame reveal-left">
+    <div class="about-photo-wrap">
+      <div class="photo-placeholder" style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:#444;">
+        <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Personal Photo">
+      </div>
     </div>
+
+    <div class="about-photo-accent"></div>
+    <div class="about-photo-label">ABOUT ME</div>
   </div>
-  <div class="about-right">
-    <div class="section-label reveal">Skills</div>
-    <div class="expertise-label reveal reveal-delay-1">EXPERTISE LEVEL</div>
-    <div class="about-skill-item reveal reveal-delay-1">
-      <div class="skill-header"><span>Brand Identity</span><span>95%</span></div>
-      <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-    </div>
-    <div class="about-skill-item reveal reveal-delay-2">
-      <div class="skill-header"><span>Motion Graphics</span><span>88%</span></div>
-      <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-    </div>
-    <div class="about-skill-item reveal reveal-delay-3">
-      <div class="skill-header"><span>UI / UX Design</span><span>82%</span></div>
-      <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-    </div>
-    <div class="about-skill-item reveal reveal-delay-4">
-      <div class="skill-header"><span>Typography</span><span>90%</span></div>
-      <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-    </div>
-    <div class="about-skill-item reveal">
-      <div class="skill-header"><span>Illustration</span><span>75%</span></div>
-      <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+
+  <div class="about-right reveal-right">
+    <div class="section-label">About Me</div>
+
+    <h2 class="section-title">
+      Creative<br><em>Designer</em>
+    </h2>
+
+    <p class="about-text">
+      I am a passionate graphic designer and photographer dedicated to creating clean and engaging visual experiences that help brands stand out. I specialize in social media campaigns, logo design, and company profiles, combining creativity with clear and organized design.
+      <br><br>
+      I enjoy paying attention to details and always aim to create visuals that reflect each brand’s personality in a simple and authentic way.
+    </p>
+
+    <div class="about-stats">
+      <div class="stat-item">
+        <div class="stat-num">3<sup>+</sup></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Companies</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Specialties</div>
+      </div>
     </div>
   </div>
 </section>
- 
+
 <!-- SERVICES -->
 <section id="services">
-  <div class="section-label reveal">What I Do</div>
-  <h2 class="section-title reveal reveal-delay-1">SERVICES</h2>
+  <div class="services-header">
+    <div>
+      <div class="section-label reveal">Services</div>
+
+      <h2 class="section-title reveal">
+        What<br><em>I Offer</em>
+      </h2>
+    </div>
+  </div>
+
   <div class="services-grid">
-    <div class="service-card reveal reveal-delay-1">
+
+    <div class="service-card reveal">
       <div class="service-num">01</div>
-      <div class="service-title">Brand Identity</div>
-      <p class="service-desc">تصميم هوية بصرية متكاملة تعكس شخصية علامتك التجارية وتميزها في السوق</p>
+
+      <div class="service-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+
+      <div class="service-title">Graphic Design</div>
+
+      <div class="service-desc">
+        Modern and visually impactful designs tailored for brands and businesses.
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-2">
+
+    <div class="service-card reveal">
       <div class="service-num">02</div>
-      <div class="service-title">Motion Graphics</div>
-      <p class="service-desc">تحريك المحتوى البصري وإنشاء رسوم متحركة احترافية لمنصات التواصل والفيديو</p>
+
+      <div class="service-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+        </svg>
+      </div>
+
+      <div class="service-title">Social Media Design</div>
+
+      <div class="service-desc">
+        Creative social media content and visual systems for digital platforms.
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-3">
+
+    <div class="service-card reveal">
       <div class="service-num">03</div>
-      <div class="service-title">Print Design</div>
-      <p class="service-desc">تصميم المطبوعات من بروشورات وكتالوجات ومواد تسويقية بجودة احترافية عالية</p>
+
+      <div class="service-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+
+      <div class="service-title">Advertising Campaigns</div>
+
+      <div class="service-desc">
+        Developing creative campaign concepts and unique visual directions for marketing campaigns.
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-1">
+
+    <div class="service-card reveal">
       <div class="service-num">04</div>
-      <div class="service-title">Social Media</div>
-      <p class="service-desc">تصميم محتوى بصري جذاب لمنصات التواصل الاجتماعي يحقق التفاعل والانتشار</p>
+
+      <div class="service-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4l3 3"/>
+        </svg>
+      </div>
+
+      <div class="service-title">Brand Identity & Logo</div>
+
+      <div class="service-desc">
+        Building unique logos and complete visual identities that reflect each brand’s personality.
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-2">
+
+    <div class="service-card reveal">
       <div class="service-num">05</div>
-      <div class="service-title">UI Design</div>
-      <p class="service-desc">تصميم واجهات مستخدم عصرية وسهلة الاستخدام للتطبيقات والمواقع الإلكترونية</p>
+
+      <div class="service-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+        </svg>
+      </div>
+
+      <div class="service-title">Company Profile Design</div>
+
+      <div class="service-desc">
+        Professional company profiles and corporate presentations with clean modern layouts.
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-3">
-      <div class="service-num">06</div>
-      <div class="service-title">Packaging</div>
-      <p class="service-desc">تصميم تغليف مبتكر للمنتجات يجذب العملاء ويعكس قيمة وجودة المنتج</p>
+
+    <div class="service-card reveal" style="background: var(--green-dark); border-color: rgba(0,255,106,0.2);">
+      <div class="service-num" style="color: rgba(0,255,106,0.1);">✦</div>
+
+      <div style="margin-top:40px;">
+        <div class="service-title" style="color: var(--green); font-size: 20px; margin-bottom: 16px;">
+          Have a Project?
+        </div>
+
+        <div class="service-desc" style="margin-bottom: 24px;">
+          Let’s discuss your vision and how I can help bring it to life.
+        </div>
+
+        <a href="#contact" class="btn-primary" style="font-size: 11px;">Start Now</a>
+      </div>
     </div>
+
   </div>
 </section>
- 
-<!-- WORK -->
-<section id="work">
-  <div class="section-label reveal">Selected Works</div>
-  <h2 class="section-title reveal reveal-delay-1">PROJECTS</h2>
-  <div class="work-filter reveal reveal-delay-2">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="branding">Branding</button>
-    <button class="filter-btn" data-filter="motion">Motion</button>
-    <button class="filter-btn" data-filter="print">Print</button>
-    <button class="filter-btn" data-filter="ui">UI / UX</button>
-  </div>
-  <div class="work-grid">
-    <div class="work-item reveal" style="--i:0" data-cat="branding">
-      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&h=600&fit=crop" alt="Nova Identity System">
-      <div class="work-overlay">
-        <div class="work-cat">Branding</div>
-        <div class="work-name">Nova Identity System</div>
-      </div>
-    </div>
-    <div class="work-item reveal" style="--i:1" data-cat="motion">
-      <img src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=600&h=450&fit=crop" alt="Apex Reel">
-      <div class="work-overlay">
-        <div class="work-cat">Motion</div>
-        <div class="work-name">Apex Reel 2025</div>
-      </div>
-    </div>
-    <div class="work-item reveal" style="--i:2" data-cat="ui">
-      <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=450&fit=crop" alt="Circle App">
-      <div class="work-overlay">
-        <div class="work-cat">UI Design</div>
-        <div class="work-name">Circle App</div>
-      </div>
-    </div>
-    <div class="work-item reveal" style="--i:3" data-cat="print">
-      <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=600&h=450&fit=crop" alt="Grid Magazine">
-      <div class="work-overlay">
-        <div class="work-cat">Print</div>
-        <div class="work-name">Grid Magazine</div>
-      </div>
-    </div>
-    <div class="work-item reveal" style="--i:4" data-cat="branding">
-      <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&h=450&fit=crop" alt="Luxe Box">
-      <div class="work-overlay">
-        <div class="work-cat">Packaging</div>
-        <div class="work-name">Luxe Box Series</div>
-      </div>
-    </div>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="tools-label">TOOLS</div>
+
+  <div class="tools-list">
+    <div class="tool-chip">Adobe Photoshop</div>
+    <div class="tool-chip">Adobe Illustrator</div>
+    <div class="tool-chip">AI Design Tools</div>
+    <div class="tool-chip">Brand Strategy</div>
+    <div class="tool-chip">Visual Direction</div>
   </div>
 </section>
- 
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-header reveal">
+    <div class="section-label">My Journey</div>
+
+    <h2 class="section-title">
+      Professional<br><em>Experience</em>
+    </h2>
+  </div>
+
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-years">2025 — Present</div>
+
+      <div>
+        <div class="exp-company">Brandology</div>
+
+        <div class="exp-desc">
+          Advertising agency — contributing to visual identities, social media designs, and creative visual content for diverse clients.
+        </div>
+      </div>
+
+      <div class="exp-status">
+        <span class="status-badge status-active">● Active</span>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-years">2023 — 2025</div>
+
+      <div>
+        <div class="exp-company">Al-Motakademah School</div>
+
+        <div class="exp-desc">
+          Advanced Schools in Saudi Arabia — contributed to visual design work supporting the brand identity and institutional communication materials.
+        </div>
+      </div>
+
+      <div class="exp-status">
+        <span class="status-badge status-past">Completed</span>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-years">2022 — 2023</div>
+
+      <div>
+        <div class="exp-company">MISR HOLLANDA CO.</div>
+
+        <div class="exp-desc">
+          Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.
+        </div>
+      </div>
+
+      <div class="exp-status">
+        <span class="status-badge status-past">Completed</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
-  <div>
-    <div class="section-label reveal">Get In Touch</div>
-    <h2 class="contact-big reveal reveal-delay-1">LET'S<br><span class="outline">CREATE</span><br>TOGETHER</h2>
-    <p class="contact-sub reveal reveal-delay-2">
-      هل لديك مشروع في ذهنك؟ أنا مستعد للعمل معك وتحويل رؤيتك إلى واقع إبداعي مذهل.
+
+  <div class="contact-left reveal-left">
+    <div class="section-label">Contact Me</div>
+
+    <h2 class="section-title">
+      Let’s Start<br><em>Your Project</em>
+    </h2>
+
+    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.9; margin-bottom: 32px; max-width: 380px;">
+      Have an idea or project in mind? I’m here to help turn your vision into a unique visual experience.
     </p>
-    <a href="mailto:abdulrahman@murad.design" class="contact-email-link reveal reveal-delay-3">
-      abdulrahman@murad.design
+
+    <div style="margin-bottom: 16px;">
+      <div class="section-label" style="margin-bottom: 8px;">Email</div>
+
+      <div class="contact-email">
+        alshymybdalrhmnmrad<br>@gmail.com
+      </div>
+    </div>
+
+    <div style="margin-bottom: 40px;">
+      <div class="section-label" style="margin-bottom: 8px;">Phone</div>
+
+      <div class="contact-phone">
+        +966 57 009 3906
+      </div>
+    </div>
+
+    <a href="mailto:alshymybdalrhmnmrad@gmail.com" class="btn-primary">
+      Send Message ✦
     </a>
   </div>
-  <div class="contact-form reveal reveal-delay-2">
-    <div class="form-group">
-      <label class="form-label">الاسم</label>
-      <input type="text" class="form-input" placeholder="اسمك الكامل">
+
+  <div class="contact-right reveal-right">
+    <div class="contact-photo-frame">
+      <div class="photo-placeholder" style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; background: var(--black);">
+        <img src="./Img/2.png" alt="Personal Photo">
+      </div>
+
+      <div class="contact-photo-overlay"></div>
+      <div class="contact-photo-corner"></div>
+      <div class="contact-photo-corner br"></div>
     </div>
-    <div class="form-group">
-      <label class="form-label">البريد الإلكتروني</label>
-      <input type="email" class="form-input" placeholder="email@example.com" dir="ltr">
-    </div>
-    <div class="form-group">
-      <label class="form-label">المشروع</label>
-      <input type="text" class="form-input" placeholder="نوع المشروع">
-    </div>
-    <div class="form-group">
-      <label class="form-label">الرسالة</label>
-      <textarea class="form-textarea" placeholder="أخبرني عن مشروعك..."></textarea>
-    </div>
-    <button class="form-btn"><span>Send Message</span></button>
   </div>
+
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© 2026 Abdulrahman Murad. All Rights Reserved.</span>
-  <div class="footer-socials">
-    <a href="#">Behance</a>
-    <a href="#">Dribbble</a>
-    <a href="#">Instagram</a>
-    <a href="#">LinkedIn</a>
+  <div class="footer-copy">
+    © 2025 Abdulrahman Murad — All Rights Reserved
+  </div>
+
+  <div class="footer-dot"></div>
+
+  <div class="footer-copy">
+    Graphic Designer & Photographer
   </div>
 </footer>
- 
-<!-- BACK TO TOP -->
-<button id="back-to-top" title="العودة للأعلى">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
-</button>
- 
- 
+
 <script src="index.js"></script>
 </body>
 </html>
