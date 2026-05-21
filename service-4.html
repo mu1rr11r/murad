@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brand Identity & Logo Services - Abdulrahman Murad Portfolio" />
+  <title>Brand Identity & Logo | Abdulrahman Murad</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styl.css" />
+  <style>
+    .service-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 40px; text-align: center; }
+    .service-hero h1 { font-size: clamp(60px, 8vw, 100px); font-family: 'Bebas Neue', sans-serif; color: var(--white); margin-bottom: 20px; letter-spacing: 3px; }
+    .service-hero em { color: var(--green); font-style: normal; }
+    .service-hero p { font-size: 18px; color: var(--text-muted); max-width: 600px; line-height: 1.9; margin-bottom: 40px; }
+    .service-content { padding: 80px 40px; background: var(--gray); }
+    .service-back { position: fixed; top: 90px; left: 40px; z-index: 100; }
+    .service-back a { color: var(--green); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 2px; transition: color 0.3s; }
+    .service-back a:hover { color: var(--white); }
+    .welcome-text { display: inline-block; padding: 12px 24px; background: rgba(0,255,106,0.1); border: 1px solid rgba(0,255,106,0.3); color: var(--green); font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 3px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-img">
+        <div class="nav-logo-placeholder"><img src="./Img/2.png" alt="" onerror="this.style.display='none'"></div>
+      </div>
+      <div class="nav-logo-text">
+        Abdulrahman
+        <span>GRAPHIC DESIGNER</span>
+      </div>
+    </a>
+  </nav>
+
+  <div class="service-back">
+    <a href="index.html">← BACK</a>
+  </div>
+
+  <section class="service-hero">
+    <div class="welcome-text">أهلاً وسهلاً</div>
+    <h1>Brand Identity <em>&</em> <em>Logo</em></h1>
+    <p>
+      Building distinctive and memorable brand identities and logos that define your company's unique personality 
+      and resonate with your target audience.
+    </p>
+    <a href="index.html#contact" class="btn-primary">Get Started</a>
+  </section>
+
+  <section class="service-content">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: var(--white); margin-bottom: 20px; letter-spacing: 2px;">
+        What We <em style="color: var(--green);">Deliver</em>
+      </h2>
+      <p style="font-size: 16px; color: var(--text-muted); line-height: 1.9; margin-bottom: 30px;">
+        We create cohesive brand identities that tell your story and build lasting connections with your audience:
+      </p>
+      <ul style="font-size: 16px; color: var(--text-muted); line-height: 2; list-style: none; padding-left: 20px;">
+        <li style="margin-bottom: 12px;">✦ Logo design and development</li>
+        <li style="margin-bottom: 12px;">✦ Brand guidelines and style guides</li>
+        <li style="margin-bottom: 12px;">✦ Color palette and typography selection</li>
+        <li style="margin-bottom: 12px;">✦ Brand messaging and visual positioning</li>
+        <li style="margin-bottom: 12px;">✦ Complete brand identity systems</li>
+      </ul>
+      <div style="margin-top: 40px;">
+        <a href="index.html#contact" class="btn-primary" style="display: inline-block;">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-copy">© 2025 Abdulrahman Murad — All Rights Reserved</div>
+    <div class="footer-dot"></div>
+    <div class="footer-copy">Graphic Designer & Photographer</div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
