@@ -9,28 +9,46 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styl.css" />
 </head>
 <body>
-
+ 
 <!-- CUSTOM CURSOR -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+ 
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-logo-wrap">
+    <div class="loader-logo-img">
+      <img src="./Img/2.png" alt="Logo" onerror="this.style.display='none'">
+    </div>
+    <div class="loader-name">
+      Abdulrahman Murad
+      <span>GRAPHIC DESIGNER</span>
+    </div>
+  </div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar" id="loaderBar"></div>
+  </div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+  <div class="loader-label" id="loaderLabel">Initializing...</div>
+</div>
+ 
 <!-- NAVBAR -->
-<nav>
+<nav id="navbar">
   <a href="#home" class="nav-logo">
     <div class="nav-logo-img">
-      <div class="nav-logo-placeholder"><img src="./Img/2.png" alt=""></div>
+      <div class="nav-logo-placeholder"><img src="./Img/2.png" alt="" onerror="this.style.display='none'"></div>
     </div>
     <div class="nav-logo-text">
       Abdulrahman
       <span>GRAPHIC DESIGNER</span>
     </div>
   </a>
-
+ 
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -39,47 +57,46 @@
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="home">
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
-
+ 
   <div class="hero-left">
-    <div class="hero-eyebrow">Available for work</div>
-
-    <h1 class="hero-name glitch" data-text="ABDULRAHMAN MURAD">
+    <div class="hero-eyebrow" id="heroEyebrow">Available for work</div>
+ 
+    <h1 class="hero-name glitch" data-text="ABDULRAHMAN MURAD" id="heroName">
       ABDULRAHMAN<br><em>MURAD</em>
     </h1>
-
-    <p class="hero-desc">
+ 
+    <p class="hero-desc" id="heroDesc">
       Passionate graphic designer and photographer creating clean and engaging visual experiences that help brands stand out — from branding identities to digital content.
     </p>
-
-    <div class="hero-btns">
+ 
+    <div class="hero-btns" id="heroBtns">
       <a href="#contact" class="btn-primary">Contact Me</a>
       <a href="#services" class="btn-outline">My Services</a>
     </div>
   </div>
-
-  <div class="hero-right">
+ 
+  <div class="hero-right" id="heroRight">
     <div class="hero-photo-frame">
       <div class="hero-photo-inner">
         <div class="photo-placeholder">
-          <img src="./Img/تنزيل (6).png" alt="">
+          <img src="./Img/تنزيل (6).png" alt="Abdulrahman Murad">
         </div>
       </div>
-
       <div class="hero-tag">GRAPHIC DESIGNER ✦</div>
     </div>
   </div>
-
-  <div class="hero-scroll">
+ 
+  <div class="hero-scroll" id="heroScroll">
     <div class="scroll-line"></div>
     scroll
   </div>
 </section>
-
+ 
 <!-- MARQUEE -->
 <div class="marquee-section">
   <div class="marquee-track">
@@ -90,308 +107,249 @@
     <span class="marquee-item">ADVERTISING</span>
     <span class="marquee-item">COMPANY PROFILES</span>
     <span class="marquee-item">PHOTOGRAPHY</span>
+    <span class="marquee-item">GRAPHIC DESIGN</span>
+    <span class="marquee-item">BRAND IDENTITY</span>
+    <span class="marquee-item">LOGO DESIGN</span>
+    <span class="marquee-item">SOCIAL MEDIA</span>
+    <span class="marquee-item">ADVERTISING</span>
+    <span class="marquee-item">COMPANY PROFILES</span>
+    <span class="marquee-item">PHOTOGRAPHY</span>
   </div>
 </div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
-  <div class="about-photo-frame reveal-left">
+  <div class="about-photo-frame reveal-img-left">
     <div class="about-photo-wrap">
-      <div class="photo-placeholder" style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:#444;">
-        <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Personal Photo">
-      </div>
+      <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Personal Photo">
     </div>
-
     <div class="about-photo-accent"></div>
     <div class="about-photo-label">ABOUT ME</div>
   </div>
-
-  <div class="about-right reveal-right">
+ 
+  <div class="about-right reveal">
     <div class="section-label">About Me</div>
-
-    <h2 class="section-title">
-      Creative<br><em>Designer</em>
-    </h2>
-
+    <h2 class="section-title">Creative<br><em>Designer</em></h2>
     <p class="about-text">
       I am a passionate graphic designer and photographer dedicated to creating clean and engaging visual experiences that help brands stand out. I specialize in social media campaigns, logo design, and company profiles, combining creativity with clear and organized design.
       <br><br>
-      I enjoy paying attention to details and always aim to create visuals that reflect each brand’s personality in a simple and authentic way.
+      I enjoy paying attention to details and always aim to create visuals that reflect each brand's personality in a simple and authentic way.
     </p>
-
     <div class="about-stats">
       <div class="stat-item">
-        <div class="stat-num">3<sup>+</sup></div>
+        <div class="stat-num" data-target="3">0<sup>+</sup></div>
         <div class="stat-label">Years Experience</div>
       </div>
-
       <div class="stat-item">
-        <div class="stat-num">3</div>
+        <div class="stat-num" data-target="3">0</div>
         <div class="stat-label">Companies</div>
       </div>
-
       <div class="stat-item">
-        <div class="stat-num">5</div>
+        <div class="stat-num" data-target="5">0</div>
         <div class="stat-label">Specialties</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- SERVICES -->
 <section id="services">
   <div class="services-header">
     <div>
       <div class="section-label reveal">Services</div>
-
-      <h2 class="section-title reveal">
-        What<br><em>I Offer</em>
-      </h2>
+      <h2 class="section-title reveal">What<br><em>I Offer</em></h2>
     </div>
   </div>
-
+ 
   <div class="services-grid">
-
     <div class="service-card reveal">
       <div class="service-num">01</div>
-
       <div class="service-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="3" y="3" width="18" height="18" rx="2"/>
           <path d="M3 9h18M9 21V9"/>
         </svg>
       </div>
-
       <div class="service-title">Graphic Design</div>
-
-      <div class="service-desc">
-        Modern and visually impactful designs tailored for brands and businesses.
-      </div>
+      <div class="service-desc">Modern and visually impactful designs tailored for brands and businesses.</div>
     </div>
-
+ 
     <div class="service-card reveal">
       <div class="service-num">02</div>
-
       <div class="service-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
         </svg>
       </div>
-
       <div class="service-title">Social Media Design</div>
-
-      <div class="service-desc">
-        Creative social media content and visual systems for digital platforms.
-      </div>
+      <div class="service-desc">Creative social media content and visual systems for digital platforms.</div>
     </div>
-
+ 
     <div class="service-card reveal">
       <div class="service-num">03</div>
-
       <div class="service-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
       </div>
-
       <div class="service-title">Advertising Campaigns</div>
-
-      <div class="service-desc">
-        Developing creative campaign concepts and unique visual directions for marketing campaigns.
-      </div>
+      <div class="service-desc">Developing creative campaign concepts and unique visual directions for marketing campaigns.</div>
     </div>
-
+ 
     <div class="service-card reveal">
       <div class="service-num">04</div>
-
       <div class="service-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 8v4l3 3"/>
         </svg>
       </div>
-
       <div class="service-title">Brand Identity & Logo</div>
-
-      <div class="service-desc">
-        Building unique logos and complete visual identities that reflect each brand’s personality.
-      </div>
+      <div class="service-desc">Building unique logos and complete visual identities that reflect each brand's personality.</div>
     </div>
-
+ 
     <div class="service-card reveal">
       <div class="service-num">05</div>
-
       <div class="service-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
           <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
         </svg>
       </div>
-
       <div class="service-title">Company Profile Design</div>
-
-      <div class="service-desc">
-        Professional company profiles and corporate presentations with clean modern layouts.
-      </div>
+      <div class="service-desc">Professional company profiles and corporate presentations with clean modern layouts.</div>
     </div>
-
+ 
     <div class="service-card reveal" style="background: var(--green-dark); border-color: rgba(0,255,106,0.2);">
       <div class="service-num" style="color: rgba(0,255,106,0.1);">✦</div>
-
       <div style="margin-top:40px;">
-        <div class="service-title" style="color: var(--green); font-size: 20px; margin-bottom: 16px;">
-          Have a Project?
-        </div>
-
-        <div class="service-desc" style="margin-bottom: 24px;">
-          Let’s discuss your vision and how I can help bring it to life.
-        </div>
-
+        <div class="service-title" style="color: var(--green); font-size: 20px; margin-bottom: 16px;">Have a Project?</div>
+        <div class="service-desc" style="margin-bottom: 24px;">Let's discuss your vision and how I can help bring it to life.</div>
         <a href="#contact" class="btn-primary" style="font-size: 11px;">Start Now</a>
       </div>
     </div>
-
   </div>
 </section>
-
+ 
 <!-- TOOLS -->
 <section id="tools">
-  <div class="tools-label">TOOLS</div>
-
+  <div class="tools-label reveal">TOOLS</div>
   <div class="tools-list">
-    <div class="tool-chip">Adobe Photoshop</div>
-    <div class="tool-chip">Adobe Illustrator</div>
-    <div class="tool-chip">AI Design Tools</div>
-    <div class="tool-chip">Brand Strategy</div>
-    <div class="tool-chip">Visual Direction</div>
+    <div class="tool-chip reveal">Adobe Photoshop</div>
+    <div class="tool-chip reveal">Adobe Illustrator</div>
+    <div class="tool-chip reveal">AI Design Tools</div>
+    <div class="tool-chip reveal">Brand Strategy</div>
+    <div class="tool-chip reveal">Visual Direction</div>
   </div>
 </section>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="exp-header reveal">
     <div class="section-label">My Journey</div>
-
-    <h2 class="section-title">
-      Professional<br><em>Experience</em>
-    </h2>
+    <h2 class="section-title">Professional<br><em>Experience</em></h2>
   </div>
-
+ 
   <div class="exp-list">
-
     <div class="exp-item reveal">
       <div class="exp-years">2025 — Present</div>
-
       <div>
         <div class="exp-company">Brandology</div>
-
-        <div class="exp-desc">
-          Advertising agency — contributing to visual identities, social media designs, and creative visual content for diverse clients.
-        </div>
+        <div class="exp-desc">Advertising agency — contributing to visual identities, social media designs, and creative visual content for diverse clients.</div>
       </div>
-
-      <div class="exp-status">
-        <span class="status-badge status-active">● Active</span>
-      </div>
+      <div class="exp-status"><span class="status-badge status-active">● Active</span></div>
     </div>
-
+ 
     <div class="exp-item reveal">
       <div class="exp-years">2023 — 2025</div>
-
       <div>
         <div class="exp-company">Al-Motakademah School</div>
-
-        <div class="exp-desc">
-          Advanced Schools in Saudi Arabia — contributed to visual design work supporting the brand identity and institutional communication materials.
-        </div>
+        <div class="exp-desc">Advanced Schools in Saudi Arabia — contributed to visual design work supporting the brand identity and institutional communication materials.</div>
       </div>
-
-      <div class="exp-status">
-        <span class="status-badge status-past">Completed</span>
-      </div>
+      <div class="exp-status"><span class="status-badge status-past">Completed</span></div>
     </div>
-
+ 
     <div class="exp-item reveal">
       <div class="exp-years">2022 — 2023</div>
-
       <div>
         <div class="exp-company">MISR HOLLANDA CO.</div>
-
-        <div class="exp-desc">
-          Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.
-        </div>
+        <div class="exp-desc">Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.</div>
       </div>
-
-      <div class="exp-status">
-        <span class="status-badge status-past">Completed</span>
-      </div>
+      <div class="exp-status"><span class="status-badge status-past">Completed</span></div>
     </div>
-
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
-
-  <div class="contact-left reveal-left">
+  <div class="contact-left reveal">
     <div class="section-label">Contact Me</div>
-
-    <h2 class="section-title">
-      Let’s Start<br><em>Your Project</em>
-    </h2>
-
-    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.9; margin-bottom: 32px; max-width: 380px;">
-      Have an idea or project in mind? I’m here to help turn your vision into a unique visual experience.
+    <h2 class="section-title">Let's Start<br><em>Your Project</em></h2>
+    <p style="font-size: 15px; color: var(--text-muted); line-height: 1.9; margin-bottom: 32px; max-width: 380px;">
+      Have an idea or project in mind? I'm here to help turn your vision into a unique visual experience.
     </p>
-
     <div style="margin-bottom: 16px;">
       <div class="section-label" style="margin-bottom: 8px;">Email</div>
-
-      <div class="contact-email">
-        alshymybdalrhmnmrad<br>@gmail.com
-      </div>
+      <div class="contact-email">alshymybdalrhmnmrad<br>@gmail.com</div>
     </div>
-
     <div style="margin-bottom: 40px;">
       <div class="section-label" style="margin-bottom: 8px;">Phone</div>
-
-      <div class="contact-phone">
-        +966 57 009 3906
-      </div>
+      <a href="tel:+966570093906" class="contact-phone">+966 57 009 3906</a>
     </div>
-
-    <a href="mailto:alshymybdalrhmnmrad@gmail.com" class="btn-primary">
-      Send Message ✦
-    </a>
+    <a href="mailto:alshymybdalrhmnmrad@gmail.com" class="btn-primary">Send Message ✦</a>
   </div>
-
-  <div class="contact-right reveal-right">
+ 
+  <div class="contact-right reveal-img-right">
     <div class="contact-photo-frame">
-      <div class="photo-placeholder" style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; background: var(--black);">
+      <div class="photo-placeholder" style="height:100%; display:flex; align-items:center; justify-content:center; background: var(--black);">
         <img src="./Img/2.png" alt="Personal Photo">
       </div>
-
       <div class="contact-photo-overlay"></div>
       <div class="contact-photo-corner"></div>
       <div class="contact-photo-corner br"></div>
     </div>
   </div>
-
 </section>
-
+ 
+<!-- THANK YOU -->
+<section id="thankyou">
+  <div class="ty-grid"></div>
+  <div class="ty-inner">
+    <div class="ty-star reveal">✦</div>
+ 
+    <div class="ty-sub reveal">A word of gratitude</div>
+ 
+    <h2 class="ty-title reveal">
+      Thank<br><em>You</em>
+    </h2>
+ 
+    <div class="ty-divider reveal">
+      <span>With Appreciation</span>
+    </div>
+ 
+    <p class="ty-text reveal">
+      Thank you for taking the time to visit my portfolio. Every project I take on is crafted with passion, dedication, and a deep commitment to quality. I look forward to creating something remarkable together.
+    </p>
+ 
+    <div class="ty-socials reveal">
+      <a href="mailto:alshymybdalrhmnmrad@gmail.com" class="ty-social-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Email Me</span>
+      </a>
+      <a href="tel:+966570093906" class="ty-social-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 15.7a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 12.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 19.92z"/></svg>
+        <span>Call Me</span>
+      </a>
+    </div>
+  </div>
+</section>
+ 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">
-    © 2025 Abdulrahman Murad — All Rights Reserved
-  </div>
-
+  <div class="footer-copy">© 2025 Abdulrahman Murad — All Rights Reserved</div>
   <div class="footer-dot"></div>
-
-  <div class="footer-copy">
-    Graphic Designer & Photographer
-  </div>
+  <div class="footer-copy">Graphic Designer & Photographer</div>
 </footer>
-
-<script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
