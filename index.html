@@ -3,674 +3,384 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Abdulrahman Murad — Graphic Designer & Photographer creating premium brand identities, social media, and advertising." />
+  <meta name="description" content="Abdulrahman Murad — Graphic Designer & Photographer" />
   <title>Abdulrahman Murad — Graphic Designer</title>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="styl.css" />
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
+<div class="noise"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- NOISE OVERLAY -->
-<div class="noise-overlay"></div>
-
-<!-- LOADING SCREEN -->
-<div id="loader">
-  <div class="loader-inner">
-    <div class="loader-logo-wrap">
-      <div class="loader-hexagon">
-        <div class="loader-hex-inner">
-          <img src="./Img/2.png" alt="Logo" onerror="this.style.display='none'">
-        </div>
-      </div>
-      <div class="loader-name-wrap">
-        <div class="loader-name">Abdulrahman Murad</div>
-        <div class="loader-subtitle">GRAPHIC DESIGNER &amp; PHOTOGRAPHER</div>
-      </div>
-    </div>
-    <div class="loader-progress-wrap">
-      <div class="loader-progress-track">
-        <div class="loader-progress-fill" id="loaderBar"></div>
-        <div class="loader-progress-glow" id="loaderGlow"></div>
-      </div>
-      <div class="loader-progress-info">
-        <span class="loader-pct" id="loaderPct">0%</span>
-        <span class="loader-label" id="loaderLabel">Initializing…</span>
-      </div>
-    </div>
+<!-- ===== LOADER ===== -->
+<div class="loader" id="loader">
+  <div class="loader-logo-wrap">
+    <svg viewBox="0 0 160 160"><rect x="4" y="4" width="152" height="152" rx="4"/></svg>
+    <img src="./Img/2.png" alt="Logo" class="loader-logo-img">
   </div>
-  <div class="loader-grid"></div>
-  <div class="loader-corner tl"></div>
-  <div class="loader-corner tr"></div>
-  <div class="loader-corner bl"></div>
-  <div class="loader-corner br"></div>
+  <div class="loader-text">Abdulrahman Murad</div>
+  <div class="loader-bar"><div class="loader-bar-inner"></div></div>
 </div>
 
-<!-- NAVBAR -->
-<nav id="navbar">
-  <a href="#home" class="nav-logo">
-    <div class="nav-logo-hex">
-      <img src="./Img/2.png" alt="Logo" onerror="this.style.display='none'">
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo-area">
+      <div class="nav-logo-box">
+        <img src="./Img/2.png" alt="Logo" class="nav-logo-img">
+      </div>
+      <span class="nav-logo-text">Abdulrahman</span>
+    </a>
+    <div class="nav-center">
+      <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+      <a href="#services"><i class="fa-solid fa-layer-group"></i> Services</a>
+      <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+      <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
     </div>
-    <div class="nav-logo-text">
-      Abdulrahman
-      <span>GRAPHIC DESIGNER</span>
+    <div class="nav-right">
+      <div class="nav-available"><span class="nav-pulse"></span> Available for work</div>
+      <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
     </div>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#home" data-text="Home">Home</a></li>
-    <li><a href="#about" data-text="About">About</a></li>
-    <li><a href="#services" data-text="Services">Services</a></li>
-    <li><a href="#experience" data-text="Experience">Experience</a></li>
-    <li><a href="#contact" class="nav-cta">
-      <span>Contact</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a></li>
-  </ul>
-
-  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-inner">
-    <ul>
-      <li><a href="#home" class="mobile-link"><span class="mobile-num">01</span>Home</a></li>
-      <li><a href="#about" class="mobile-link"><span class="mobile-num">02</span>About</a></li>
-      <li><a href="#services" class="mobile-link"><span class="mobile-num">03</span>Services</a></li>
-      <li><a href="#experience" class="mobile-link"><span class="mobile-num">04</span>Experience</a></li>
-      <li><a href="#contact" class="mobile-link"><span class="mobile-num">05</span>Contact</a></li>
-    </ul>
-    <div class="mobile-menu-footer">
-      <a href="mailto:alshymybdalrhmnmrad@gmail.com">alshymybdalrhmnmrad@gmail.com</a>
-    </div>
-  </div>
+<div class="mob-menu" id="mobMenu">
+  <a href="#home" onclick="closeMenu()"><i class="fa-solid fa-house"></i> Home</a>
+  <a href="#about" onclick="closeMenu()"><i class="fa-solid fa-user"></i> About</a>
+  <a href="#services" onclick="closeMenu()"><i class="fa-solid fa-layer-group"></i> Services</a>
+  <a href="#experience" onclick="closeMenu()"><i class="fa-solid fa-briefcase"></i> Experience</a>
+  <a href="#contact" onclick="closeMenu()"><i class="fa-solid fa-envelope"></i> Contact</a>
 </div>
 
-<!-- HERO -->
-<section id="home">
-  <!-- Ambient lighting blobs -->
-  <div class="hero-ambient-1"></div>
-  <div class="hero-ambient-2"></div>
-  <div class="hero-ambient-3"></div>
-  <div class="hero-grid-lines"></div>
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-3d-element el-1"><i class="fa-solid fa-pen-nib"></i></div>
+  <div class="hero-3d-element el-2"><i class="fa-solid fa-palette"></i></div>
+  <div class="hero-3d-element el-3"><i class="fa-solid fa-camera"></i></div>
+  <div class="hero-3d-element el-4"><i class="fa-solid fa-fingerprint"></i></div>
+  <div class="hero-3d-element el-5"><i class="fa-solid fa-star"></i></div>
 
-  <div class="hero-left">
-    <div class="hero-eyebrow" id="heroEyebrow">
-      <span class="eyebrow-pulse"></span>
-      <span>Available for work</span>
-      <span class="eyebrow-badge">2025</span>
-    </div>
-
-    <h1 class="hero-name" id="heroName">
-      <span class="hero-name-line" data-text="ABDULRAHMAN">ABDULRAHMAN</span>
-      <em class="hero-name-line hero-name-accent" data-text="MURAD">MURAD</em>
-    </h1>
-
-    <div class="hero-role-wrap" id="heroRole">
-      <div class="hero-role-line"></div>
-      <span class="hero-role">Graphic Designer &amp; Photographer</span>
-    </div>
-
-    <p class="hero-desc" id="heroDesc">
-      Passionate graphic designer and photographer creating clean and engaging visual experiences that help brands stand out — from branding identities to digital content.
-    </p>
-
-    <div class="hero-btns" id="heroBtns">
-      <a href="#contact" class="btn-primary">
-        <span class="btn-label">Start a Project</span>
-        <span class="btn-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-        <div class="btn-shine"></div>
-      </a>
-      <a href="#services" class="btn-ghost">
-        <span>Explore Services</span>
-      </a>
-    </div>
-
-    <div class="hero-metrics" id="heroMetrics">
-      <div class="metric-item">
-        <span class="metric-val">3+</span>
-        <span class="metric-lab">Years</span>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-logo-area">
+        <svg class="hero-logo-svg" viewBox="0 0 280 280">
+          <rect x="4" y="4" width="272" height="272" rx="6"/>
+        </svg>
+        <img src="./Img/2.png" alt="Abdulrahman Logo" class="hero-logo-img">
+        <div class="hero-logo-corner tl"></div>
+        <div class="hero-logo-corner tr"></div>
+        <div class="hero-logo-corner bl"></div>
+        <div class="hero-logo-corner br"></div>
       </div>
-      <div class="metric-divider"></div>
-      <div class="metric-item">
-        <span class="metric-val">3</span>
-        <span class="metric-lab">Companies</span>
+      <div class="hero-designer-badge">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>GRAPHIC DESIGNER</span>
       </div>
-      <div class="metric-divider"></div>
-      <div class="metric-item">
-        <span class="metric-val">5</span>
-        <span class="metric-lab">Specialties</span>
+    </div>
+    <div class="hero-right">
+      <div class="hero-label">
+        <div class="line"></div>
+        <span>Graphic Designer & Photographer</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="first">ABDULRAHMAN</span>
+        <span class="last">MURAD</span>
+      </h1>
+      <p class="hero-title">Passionate graphic designer creating clean and engaging <strong>visual experiences</strong> that help brands stand out — from branding identities to digital content.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary"><span>Start a Project</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#services" class="btn-outline"><i class="fa-solid fa-compass"></i> Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="number counter" data-target="3">0</div><div class="label">+ Years</div></div>
+        <div class="hero-stat"><div class="number counter" data-target="3">0</div><div class="label">Companies</div></div>
+        <div class="hero-stat"><div class="number counter" data-target="5">0</div><div class="label">Specialties</div></div>
       </div>
     </div>
   </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
 
-  <div class="hero-right" id="heroRight">
-    <div class="hero-photo-scene">
-      <!-- Decorative rings -->
-      <div class="photo-ring photo-ring-1"></div>
-      <div class="photo-ring photo-ring-2"></div>
-      <div class="photo-ring photo-ring-3"></div>
+<!-- ===== MARQUEE ===== -->
+<section class="marquee-section">
+  <div class="marquee">
+    <div class="marquee-item"><span>GRAPHIC DESIGN</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>BRAND IDENTITY</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>LOGO DESIGN</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>SOCIAL MEDIA</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>ADVERTISING</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>COMPANY PROFILES</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>PHOTOGRAPHY</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>GRAPHIC DESIGN</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>BRAND IDENTITY</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>LOGO DESIGN</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>SOCIAL MEDIA</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>ADVERTISING</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>COMPANY PROFILES</span><i class="fa-solid fa-diamond"></i></div>
+    <div class="marquee-item"><span>PHOTOGRAPHY</span><i class="fa-solid fa-diamond"></i></div>
+  </div>
+</section>
 
-      <!-- Main frame -->
-      <div class="hero-photo-frame" id="heroFrame">
-        <div class="hero-photo-inner">
-          <img src="./Img/2.png" alt="Abdulrahman Murad">
-          <div class="photo-scanline"></div>
-          <div class="photo-vignette"></div>
+<!-- ===== ABOUT ===== -->
+<section class="about scene" id="about">
+  <div class="scene-inner">
+    <div class="section-header reveal-down">
+      <div class="section-label"><span class="num">02</span><div class="line"></div><span class="text">About Me</span></div>
+      <h2 class="section-title">About <span class="accent">Me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-image reveal-rotate-left" data-3d="true">
+        <div class="about-image-inner tilt-card">
+          <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Abdulrahman Murad">
+          <div class="about-image-overlay">
+            <div class="about-image-icon"><i class="fa-solid fa-expand"></i></div>
+          </div>
+          <div class="about-image-tag"><i class="fa-solid fa-fingerprint"></i> Brand Identity • Advertising</div>
         </div>
-        <!-- Corner accents -->
-        <div class="frame-accent tl"></div>
-        <div class="frame-accent tr"></div>
-        <div class="frame-accent bl"></div>
-        <div class="frame-accent br"></div>
+        <div class="about-image-border"></div>
       </div>
-
-      <!-- Floating cards -->
-      <div class="float-card float-card-1">
-        <div class="float-card-dot"></div>
-        <span>Brand Identity</span>
-      </div>
-      <div class="float-card float-card-2">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        <span>Advertising</span>
-      </div>
-
-      <!-- Role badge -->
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        GRAPHIC DESIGNER
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-scroll-indicator" id="heroScroll">
-    <div class="scroll-track">
-      <div class="scroll-thumb"></div>
-    </div>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-fade left"></div>
-  <div class="marquee-track">
-    <span class="marquee-item">GRAPHIC DESIGN <em>✦</em></span>
-    <span class="marquee-item">BRAND IDENTITY <em>✦</em></span>
-    <span class="marquee-item">LOGO DESIGN <em>✦</em></span>
-    <span class="marquee-item">SOCIAL MEDIA <em>✦</em></span>
-    <span class="marquee-item">ADVERTISING <em>✦</em></span>
-    <span class="marquee-item">COMPANY PROFILES <em>✦</em></span>
-    <span class="marquee-item">PHOTOGRAPHY <em>✦</em></span>
-    <span class="marquee-item">GRAPHIC DESIGN <em>✦</em></span>
-    <span class="marquee-item">BRAND IDENTITY <em>✦</em></span>
-    <span class="marquee-item">LOGO DESIGN <em>✦</em></span>
-    <span class="marquee-item">SOCIAL MEDIA <em>✦</em></span>
-    <span class="marquee-item">ADVERTISING <em>✦</em></span>
-    <span class="marquee-item">COMPANY PROFILES <em>✦</em></span>
-    <span class="marquee-item">PHOTOGRAPHY <em>✦</em></span>
-  </div>
-  <div class="marquee-fade right"></div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-photo-col reveal-img-left">
-    <div class="about-photo-scene">
-      <div class="about-photo-wrap">
-        <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Abdulrahman Murad">
-        <div class="about-photo-grain"></div>
-        <div class="about-photo-tint"></div>
-      </div>
-      <div class="about-accent-block"></div>
-      <div class="about-photo-tag">
-        <span>ABOUT ME</span>
-      </div>
-      <!-- Floating stat pill -->
-      <div class="about-stat-pill">
-        <span class="pill-num">3+</span>
-        <span class="pill-lab">Years of<br>Experience</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="about-right reveal">
-    <div class="section-eyebrow">
-      <div class="eyebrow-line"></div>
-      <span>About Me</span>
-    </div>
-    <h2 class="section-title">Creative<br><em>Designer</em></h2>
-    <p class="about-text">
-      I am a passionate graphic designer and photographer dedicated to creating clean and engaging visual experiences that help brands stand out. I specialize in social media campaigns, logo design, and company profiles, combining creativity with clear and organized design.
-    </p>
-    <p class="about-text">
-      I enjoy paying attention to details and always aim to create visuals that reflect each brand's personality in a simple and authentic way.
-    </p>
-
-    <div class="about-skills-wrap">
-      <div class="skill-tag">Brand Identity</div>
-      <div class="skill-tag">Logo Design</div>
-      <div class="skill-tag">Social Media</div>
-      <div class="skill-tag">Photography</div>
-      <div class="skill-tag">Ad Campaigns</div>
-    </div>
-
-    <div class="about-cta-row">
-      <a href="#contact" class="btn-primary">
-        <span class="btn-label">Work Together</span>
-        <span class="btn-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-        <div class="btn-shine"></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- TOOLS -->
-<section id="tools">
-  <div class="tools-inner">
-    <div class="tools-label reveal">TOOLS &amp; SKILLS</div>
-    <div class="tools-list">
-      <div class="tool-chip reveal">
-        <span class="tool-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="5" fill="rgba(0,255,106,0.15)"/>
-            <text x="12" y="17" text-anchor="middle" font-family="Arial" font-weight="900" font-size="11" fill="#00ff6a">Ps</text>
-          </svg>
-        </span>
-        <span class="tool-name">Adobe Photoshop</span>
-      </div>
-      <div class="tool-chip reveal">
-        <span class="tool-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="5" fill="rgba(0,255,106,0.15)"/>
-            <text x="12" y="17" text-anchor="middle" font-family="Arial" font-weight="900" font-size="11" fill="#00ff6a">Ai</text>
-          </svg>
-        </span>
-        <span class="tool-name">Adobe Illustrator</span>
-      </div>
-      <div class="tool-chip reveal">
-        <span class="tool-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ff6a" stroke-width="1.5">
-            <rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V6a4 4 0 018 0v2"/>
-            <circle cx="9" cy="14" r="1.5"/><circle cx="15" cy="14" r="1.5"/><path d="M9 17.5h6"/>
-          </svg>
-        </span>
-        <span class="tool-name">AI Design Tools</span>
-      </div>
-      <div class="tool-chip reveal">
-        <span class="tool-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ff6a" stroke-width="1.5">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-          </svg>
-        </span>
-        <span class="tool-name">Brand Strategy</span>
-      </div>
-      <div class="tool-chip reveal">
-        <span class="tool-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ff6a" stroke-width="1.5">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-          </svg>
-        </span>
-        <span class="tool-name">Visual Direction</span>
+      <div class="about-content reveal-rotate-right">
+        <div class="about-exp reveal-bounce">
+          <span class="num counter" data-target="3">0</span>
+          <span class="txt">Years of<br>Experience</span>
+        </div>
+        <h3 class="about-heading">Creative <span class="green">Designer</span></h3>
+        <p class="about-text">I am a passionate graphic designer and photographer dedicated to creating clean and engaging visual experiences that help brands stand out. I specialize in social media campaigns, logo design, and company profiles, combining creativity with clear and organized design.</p>
+        <p class="about-text">I enjoy paying attention to details and always aim to create visuals that reflect each brand's personality in a simple and authentic way.</p>
+        <div class="about-tags">
+          <span class="about-tag reveal-up stagger-1"><i class="fa-solid fa-fingerprint"></i> Brand Identity</span>
+          <span class="about-tag reveal-up stagger-2"><i class="fa-solid fa-pen-nib"></i> Logo Design</span>
+          <span class="about-tag reveal-up stagger-3"><i class="fa-solid fa-share-nodes"></i> Social Media</span>
+          <span class="about-tag reveal-up stagger-4"><i class="fa-solid fa-camera"></i> Photography</span>
+          <span class="about-tag reveal-up stagger-5"><i class="fa-solid fa-bullhorn"></i> Ad Campaigns</span>
+        </div>
+        <a href="#contact" class="btn-primary"><span>Work Together</span> <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="exp-header">
-    <div class="section-eyebrow reveal">
-      <div class="eyebrow-line"></div>
-      <span>My Journey</span>
+<!-- ===== TOOLS ===== -->
+<section class="tools scene" id="tools">
+  <div class="scene-inner">
+    <div class="section-header reveal-blur">
+      <div class="section-label"><span class="num"><i class="fa-solid fa-diamond" style="font-size:.55rem"></i></span><div class="line"></div><span class="text">Tools & Skills</span></div>
+      <h2 class="section-title">Tools & <span class="accent">Skills</span></h2>
     </div>
-    <h2 class="section-title reveal">Professional<br><em>Experience</em></h2>
-  </div>
-
-  <div class="exp-list">
-    <div class="exp-item reveal" data-index="01">
-      <div class="exp-left">
-        <div class="exp-years">2025 — Present</div>
-        <div class="exp-index">01</div>
+    <div class="tools-grid">
+      <div class="tool-card reveal-up stagger-1 tilt-card">
+        <div class="tool-icon"><i class="fa-solid fa-image"></i></div>
+        <div class="tool-name">Adobe Photoshop</div>
+        <div class="tool-bar"><div class="tool-bar-fill" data-width="90"></div></div>
       </div>
-      <div class="exp-center">
-        <div class="exp-company">Brandology</div>
-        <div class="exp-role">Creative Designer</div>
-        <div class="exp-desc">Advertising agency — contributing to visual identities, social media designs, and creative visual content for diverse clients.</div>
+      <div class="tool-card reveal-up stagger-2 tilt-card">
+        <div class="tool-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <div class="tool-name">Adobe Illustrator</div>
+        <div class="tool-bar"><div class="tool-bar-fill" data-width="85"></div></div>
       </div>
-      <div class="exp-right">
-        <span class="status-badge status-active">
-          <span class="status-dot"></span>
-          Active
-        </span>
+      <div class="tool-card reveal-up stagger-3 tilt-card">
+        <div class="tool-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="tool-name">AI Design Tools</div>
+        <div class="tool-bar"><div class="tool-bar-fill" data-width="75"></div></div>
       </div>
-    </div>
-
-    <div class="exp-item reveal" data-index="02">
-      <div class="exp-left">
-        <div class="exp-years">2023 — 2025</div>
-        <div class="exp-index">02</div>
+      <div class="tool-card reveal-up stagger-4 tilt-card">
+        <div class="tool-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <div class="tool-name">Brand Strategy</div>
+        <div class="tool-bar"><div class="tool-bar-fill" data-width="80"></div></div>
       </div>
-      <div class="exp-center">
-        <div class="exp-company">Al-Motakademah School</div>
-        <div class="exp-role">Visual Designer</div>
-        <div class="exp-desc">Advanced Schools in Saudi Arabia — contributed to visual design work supporting brand identity and institutional communication materials.</div>
-      </div>
-      <div class="exp-right">
-        <span class="status-badge status-past">Completed</span>
-      </div>
-    </div>
-
-    <div class="exp-item reveal" data-index="03">
-      <div class="exp-left">
-        <div class="exp-years">2022 — 2023</div>
-        <div class="exp-index">03</div>
-      </div>
-      <div class="exp-center">
-        <div class="exp-company">MISR HOLLANDA CO.</div>
-        <div class="exp-role">Brand Designer</div>
-        <div class="exp-desc">Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.</div>
-      </div>
-      <div class="exp-right">
-        <span class="status-badge status-past">Completed</span>
+      <div class="tool-card reveal-up stagger-5 tilt-card">
+        <div class="tool-icon"><i class="fa-solid fa-eye"></i></div>
+        <div class="tool-name">Visual Direction</div>
+        <div class="tool-bar"><div class="tool-bar-fill" data-width="88"></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="services-bg-text" aria-hidden="true">SERVICES</div>
-
-  <div class="services-header">
-    <div>
-      <div class="section-eyebrow reveal">
-        <div class="eyebrow-line"></div>
-        <span>What I Offer</span>
-      </div>
-      <h2 class="section-title reveal">Services &amp;<br><em>Solutions</em></h2>
+<!-- ===== EXPERIENCE ===== -->
+<section class="experience scene" id="experience">
+  <div class="scene-inner">
+    <div class="section-header reveal-zoom-rotate">
+      <div class="section-label"><span class="num">04</span><div class="line"></div><span class="text">My Journey</span></div>
+      <h2 class="section-title">Professional <span class="outline">Experience</span></h2>
     </div>
-    <p class="services-intro reveal">Every project crafted with precision,<br>creativity, and strategic vision.</p>
+    <div class="timeline">
+      <div class="timeline-item reveal-flip">
+        <div class="timeline-dot active-dot"></div>
+        <div class="timeline-year">2025 — Present</div>
+        <div class="timeline-role">Creative Designer</div>
+        <div class="timeline-company"><i class="fa-solid fa-building"></i> Brandology</div>
+        <div class="timeline-desc">Advertising agency — contributing to visual identities, social media designs, and creative visual content for diverse clients.</div>
+        <div class="timeline-status active-st"><i class="fa-solid fa-circle" style="font-size:5px"></i> Active</div>
+      </div>
+      <div class="timeline-item reveal-flip stagger-2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2023 — 2025</div>
+        <div class="timeline-role">Visual Designer</div>
+        <div class="timeline-company"><i class="fa-solid fa-school"></i> Al-Motakademah School</div>
+        <div class="timeline-desc">Advanced Schools in Saudi Arabia — contributed to visual design work supporting brand identity and institutional communication materials.</div>
+        <div class="timeline-status completed"><i class="fa-solid fa-check" style="font-size:8px"></i> Completed</div>
+      </div>
+      <div class="timeline-item reveal-flip stagger-4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2022 — 2023</div>
+        <div class="timeline-role">Brand Designer</div>
+        <div class="timeline-company"><i class="fa-solid fa-city"></i> MISR HOLLANDA CO.</div>
+        <div class="timeline-desc">Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.</div>
+        <div class="timeline-status completed"><i class="fa-solid fa-check" style="font-size:8px"></i> Completed</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="services-grid">
-    <a href="service-1.html" class="service-card reveal" style="text-decoration:none;color:inherit;">
-      <div class="service-card-inner">
+<!-- ===== SERVICES ===== -->
+<section class="services scene" id="services">
+  <div class="scene-inner">
+    <div class="section-header reveal-slide-fade">
+      <div class="section-label"><span class="num">03</span><div class="line"></div><span class="text">Services</span></div>
+      <h2 class="section-title">Services & <span class="outline">Solutions</span></h2>
+      <p style="color:var(--g400);margin-top:1rem;max-width:500px;font-size:.95rem">Every project crafted with precision, creativity, and strategic vision.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal-up stagger-1 tilt-card">
         <div class="service-num">01</div>
-        <div class="service-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-          </svg>
-        </div>
-        <div class="service-content">
-          <div class="service-title">Graphic Design</div>
-          <div class="service-desc">Modern and visually impactful designs tailored for brands and businesses.</div>
-        </div>
-        <div class="service-arrow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="service-card-bg"></div>
+        <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+        <h3 class="service-name">Graphic Design</h3>
+        <p class="service-desc">Modern and visually impactful designs tailored for brands and businesses.</p>
       </div>
-    </a>
-
-    <a href="service-2.html" class="service-card reveal" style="text-decoration:none;color:inherit;">
-      <div class="service-card-inner">
+      <div class="service-card reveal-left stagger-2 tilt-card">
         <div class="service-num">02</div>
-        <div class="service-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
-          </svg>
-        </div>
-        <div class="service-content">
-          <div class="service-title">Social Media Design</div>
-          <div class="service-desc">Creative social media content and visual systems for digital platforms.</div>
-        </div>
-        <div class="service-arrow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="service-card-bg"></div>
+        <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
+        <h3 class="service-name">Social Media Design</h3>
+        <p class="service-desc">Creative social media content and visual systems for digital platforms.</p>
       </div>
-    </a>
-
-    <a href="service-3.html" class="service-card reveal" style="text-decoration:none;color:inherit;">
-      <div class="service-card-inner">
+      <div class="service-card reveal-right stagger-3 tilt-card">
         <div class="service-num">03</div>
-        <div class="service-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-          </svg>
-        </div>
-        <div class="service-content">
-          <div class="service-title">Advertising Campaigns</div>
-          <div class="service-desc">Developing creative campaign concepts and unique visual directions for marketing campaigns.</div>
-        </div>
-        <div class="service-arrow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="service-card-bg"></div>
+        <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <h3 class="service-name">Advertising Campaigns</h3>
+        <p class="service-desc">Developing creative campaign concepts and unique visual directions for marketing campaigns.</p>
       </div>
-    </a>
-
-    <a href="service-4.html" class="service-card reveal" style="text-decoration:none;color:inherit;">
-      <div class="service-card-inner">
+      <div class="service-card reveal-rotate-left stagger-4 tilt-card">
         <div class="service-num">04</div>
-        <div class="service-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-          </svg>
-        </div>
-        <div class="service-content">
-          <div class="service-title">Brand Identity &amp; Logo</div>
-          <div class="service-desc">Building unique logos and complete visual identities that reflect each brand's personality.</div>
-        </div>
-        <div class="service-arrow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="service-card-bg"></div>
+        <div class="service-icon"><i class="fa-solid fa-fingerprint"></i></div>
+        <h3 class="service-name">Brand Identity & Logo</h3>
+        <p class="service-desc">Building unique logos and complete visual identities that reflect each brand's personality.</p>
       </div>
-    </a>
-
-    <a href="service-5.html" class="service-card reveal" style="text-decoration:none;color:inherit;">
-      <div class="service-card-inner">
+      <div class="service-card reveal-rotate-right stagger-5 tilt-card">
         <div class="service-num">05</div>
-        <div class="service-icon-wrap">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-          </svg>
-        </div>
-        <div class="service-content">
-          <div class="service-title">Company Profile Design</div>
-          <div class="service-desc">Professional company profiles and corporate presentations with clean modern layouts.</div>
-        </div>
-        <div class="service-arrow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="service-card-bg"></div>
+        <div class="service-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h3 class="service-name">Company Profile Design</h3>
+        <p class="service-desc">Professional company profiles and corporate presentations with clean modern layouts.</p>
       </div>
-    </a>
-
-    <div class="service-card service-cta-card reveal" style="cursor:pointer;">
-      <div class="service-card-inner">
-        <div class="cta-star">✦</div>
-        <div class="service-content">
-          <div class="service-title cta-title">Have a Project?</div>
-          <div class="service-desc">Let's discuss your vision and how I can help bring it to life.</div>
-        </div>
-        <a href="#contact" class="btn-primary cta-btn">
-          <span class="btn-label">Start Now</span>
-          <span class="btn-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-          <div class="btn-shine"></div>
-        </a>
-        <div class="service-card-bg cta-bg"></div>
+    </div>
+    <div class="reveal-scale" style="margin-top:3rem">
+      <div class="cta-box">
+        <div style="width:50px;height:2px;background:var(--green);margin:0 auto 1.5rem"></div>
+        <h3 class="cta-heading"><i class="fa-solid fa-diamond" style="font-size:.8rem;color:var(--green);margin-right:.5rem"></i> Have a Project?</h3>
+        <p class="cta-text">Let's discuss your vision and how I can help bring it to life.</p>
+        <a href="#contact" class="btn-primary"><span>Start Now</span> <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-ambient"></div>
-
-  <div class="contact-left reveal">
-    <div class="section-eyebrow">
-      <div class="eyebrow-line"></div>
-      <span>Contact Me</span>
+<!-- ===== CONTACT ===== -->
+<section class="contact scene" id="contact">
+  <div class="scene-inner">
+    <div class="section-header reveal-down">
+      <div class="section-label"><span class="num">05</span><div class="line"></div><span class="text">Contact</span></div>
+      <h2 class="section-title">Let's Start <span class="accent">Your Project</span></h2>
+      <p style="color:var(--g400);margin-top:1rem;max-width:500px;font-size:.95rem">Have an idea or project in mind? I'm here to help turn your vision into a unique visual experience.</p>
     </div>
-    <h2 class="section-title">Let's Start<br><em>Your Project</em></h2>
-    <p class="contact-intro">
-      Have an idea or project in mind? I'm here to help turn your vision into a unique visual experience.
-    </p>
-
-    <div class="contact-info-list">
-      <div class="contact-info-item">
-        <div class="contact-info-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <div class="contact-grid">
+      <div class="contact-info reveal-rotate-left">
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value"><a href="mailto:alshymybdalrhmnmrad@gmail.com">alshymybdalrhmnmrad@gmail.com</a></div>
+          </div>
         </div>
-        <div class="contact-info-content">
-          <span class="contact-info-label">Email</span>
-          <span class="contact-info-val">alshymybdalrhmnmrad@gmail.com</span>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value"><a href="tel:+966570093906">+966 57 009 3906</a></div>
+          </div>
         </div>
-      </div>
-
-      <div class="contact-info-item">
-        <div class="contact-info-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 15.7a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 12.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 19.92z"/></svg>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div>
+            <div class="contact-item-label">WhatsApp</div>
+            <div class="contact-item-value"><a href="https://wa.me/966570093906" target="_blank">Chat on WhatsApp</a></div>
+          </div>
         </div>
-        <div class="contact-info-content">
-          <span class="contact-info-label">Phone</span>
-          <a href="tel:+966570093906" class="contact-info-val contact-info-link">+966 57 009 3906</a>
-        </div>
-      </div>
-
-      <div class="contact-info-item">
-        <div class="contact-info-icon whatsapp-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </div>
-        <div class="contact-info-content">
-          <span class="contact-info-label">WhatsApp</span>
-          <a href="https://wa.me/966570093906" target="_blank" class="contact-info-val contact-info-link">Chat on WhatsApp</a>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Saudi Arabia</div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <a href="mailto:alshymybdalrhmnmrad@gmail.com" class="btn-primary contact-cta-btn">
-      <span class="btn-label">Send a Message</span>
-      <span class="btn-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-      </span>
-      <div class="btn-shine"></div>
-    </a>
-  </div>
-
-  <div class="contact-right reveal-img-right">
-    <div class="contact-photo-scene">
-      <div class="contact-photo-frame">
-        <img src="./Img/2.png" alt="Abdulrahman Murad">
-        <div class="contact-photo-overlay"></div>
-        <div class="contact-photo-grain"></div>
-        <div class="frame-accent tl"></div>
-        <div class="frame-accent br"></div>
-      </div>
-      <div class="contact-photo-decor"></div>
+      <form class="contact-form reveal-rotate-right" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group"><label><i class="fa-solid fa-user"></i> Your Name</label><input type="text" placeholder="John Doe" required></div>
+          <div class="form-group"><label><i class="fa-solid fa-envelope"></i> Your Email</label><input type="email" placeholder="john@example.com" required></div>
+        </div>
+        <div class="form-group"><label><i class="fa-solid fa-tag"></i> Subject</label><input type="text" placeholder="Project Inquiry"></div>
+        <div class="form-group"><label><i class="fa-solid fa-message"></i> Message</label><textarea placeholder="Tell me about your project..."></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center"><span>Send Message</span> <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- THANK YOU -->
-<section id="thankyou">
-  <div class="ty-grid"></div>
-  <div class="ty-ambient"></div>
-
-  <div class="ty-inner">
-    <div class="ty-star reveal">✦</div>
-    <div class="ty-sub reveal">A Word of Gratitude</div>
-    <h2 class="ty-title reveal">Thank<br><em>You</em></h2>
-    <div class="ty-divider reveal">
-      <span class="ty-div-line"></span>
-      <span class="ty-div-text">With Appreciation</span>
-      <span class="ty-div-line"></span>
+<!-- ===== THANK YOU ===== -->
+<section class="thankyou scene">
+  <div class="scene-inner">
+    <div class="thankyou-glow"></div>
+    <div class="reveal-bounce">
+      <div class="thankyou-label"><i class="fa-solid fa-diamond" style="font-size:.5rem;margin-right:.3rem"></i> A Word of Gratitude</div>
     </div>
-    <p class="ty-text reveal">
-      Thank you for taking the time to visit my portfolio. Every project I take on is crafted with passion, dedication, and a deep commitment to quality. I look forward to creating something remarkable together.
-    </p>
-    <div class="ty-socials reveal">
-      <a href="mailto:alshymybdalrhmnmrad@gmail.com" class="ty-social-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>Email Me</span>
-      </a>
-      <a href="tel:+966570093906" class="ty-social-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 15.7a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 12.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 19.92z"/></svg>
-        <span>Call Me</span>
-      </a>
-      <a href="https://wa.me/966570093906" target="_blank" class="ty-social-btn ty-whatsapp">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span>WhatsApp</span>
-      </a>
+    <h2 class="thankyou-heading reveal-zoom-rotate">THANK<br><span class="outline">YOU</span></h2>
+    <p class="thankyou-text reveal-blur">Thank you for taking the time to visit my portfolio. Every project I take on is crafted with passion, dedication, and a deep commitment to quality. I look forward to creating something remarkable together.</p>
+    <div class="thankyou-links reveal-up">
+      <a href="mailto:alshymybdalrhmnmrad@gmail.com" class="btn-outline"><i class="fa-solid fa-envelope"></i> Email Me</a>
+      <a href="tel:+966570093906" class="btn-outline"><i class="fa-solid fa-phone"></i> Call Me</a>
+      <a href="https://wa.me/966570093906" target="_blank" class="btn-primary"><span>WhatsApp</span> <i class="fa-brands fa-whatsapp"></i></a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="./Img/2.png" alt="Logo" onerror="this.style.display='none'">
-      </div>
-      <div>
-        <div class="footer-name">Abdulrahman Murad</div>
-        <div class="footer-role">Graphic Designer &amp; Photographer</div>
-      </div>
-    </div>
-    <div class="footer-center">
-      <div class="footer-dot"></div>
-      <span class="footer-copy">© 2025 All Rights Reserved</span>
-    </div>
+    <div class="footer-logo"><span class="dot"></span> Abdulrahman Murad</div>
+    <div class="footer-copy">Graphic Designer & Photographer • © 2026 All Rights Reserved</div>
     <div class="footer-links">
-      <a href="mailto:alshymybdalrhmnmrad@gmail.com">Email</a>
-      <a href="tel:+966570093906">Phone</a>
-      <a href="https://wa.me/966570093906" target="_blank">WhatsApp</a>
+      <a href="mailto:alshymybdalrhmnmrad@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="tel:+966570093906"><i class="fa-solid fa-phone"></i> Phone</a>
+      <a href="https://wa.me/966570093906" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     </div>
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/966570093906" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-  <div class="whatsapp-pulse"></div>
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-  <span class="whatsapp-tooltip">Chat with me!</span>
-</a>
-
-<!-- SCROLL TO TOP -->
-<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <path d="M18 15l-6-6-6 6"/>
-  </svg>
-</button>
-
-<!-- Nav progress dots -->
-<div class="nav-progress" id="navProgress"></div>
+<!-- Toast -->
+<div id="toast" style="position:fixed;bottom:2rem;right:2rem;background:var(--green);color:var(--black);padding:1rem 1.5rem;font-weight:600;font-size:.85rem;z-index:99999;transform:translateY(100px);opacity:0;transition:all .4s;display:flex;align-items:center;gap:.5rem;border-radius:0">
+  <i class="fa-solid fa-circle-check"></i> Message sent successfully!
+</div>
 
 <script src="index.js"></script>
 </body>
