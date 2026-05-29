@@ -179,7 +179,6 @@ function update3DScroll() {
   });
   const aboutImg=document.querySelector('.about-image-inner');
   if(aboutImg){const rect=aboutImg.getBoundingClientRect();if(rect.top<vh&&rect.bottom>0){const p=(vh-rect.top)/(vh+rect.height);aboutImg.style.transform=`perspective(800px) rotateY(${(p-0.5)*5}deg) rotateX(${(p-0.5)*-2}deg)`;}}
-  document.querySelectorAll('.hero-3d-element').forEach((el,i)=>{const sp=0.015+i*0.008;const rv=scrollY*0.015*(i+1);el.style.transform=`translateY(${-scrollY*sp}px) rotateX(${rv}deg) rotateY(${rv*.5}deg)`;});
   ticking=false;
 }
 window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update3DScroll);ticking=true;}});
@@ -247,7 +246,7 @@ if(aboutImgEl&&aboutContainer){aboutImgEl.onload=()=>{shatterInstance=new Shatte
 const shatterObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&shatterInstance){shatterInstance.assemble();shatterObs.unobserve(e.target);}});},{threshold:0.3});
 if(aboutContainer)shatterObs.observe(aboutContainer);
 
-// ===== CARD SPREAD (Tools) =====
+// ===== CARD SPREAD =====
 class CardSpread {
   constructor(container){this.container=container;this.cards=Array.from(container.querySelectorAll('.spread-card'));this.spread=false;this.init();}
   init(){
@@ -268,7 +267,7 @@ class CardSpread {
 document.querySelectorAll('.spread-container').forEach(c=>new CardSpread(c));
 
 // ============================================
-// SERVICE WHEEL — العجلة الدوارة
+// SERVICE WHEEL — كروت دائرية كبيرة
 // ============================================
 class ServiceWheel {
   constructor(viewport) {
@@ -278,68 +277,61 @@ class ServiceWheel {
     this.spokes = Array.from(viewport.querySelectorAll('.wheel-spoke'));
     this.orbitDots = Array.from(viewport.querySelectorAll('.wheel-orbit-dot'));
     this.angle = 0;
-    this.targetSpeed = 0.25;
+    this.targetSpeed = 0.18;
     this.currentSpeed = 0;
     this.hoveredCard = null;
     this.isRunning = false;
-    this.radius = 200;
+    this.radius = 290;
     this.cardAngles = [];
-
     this.init();
   }
 
   init() {
-    // Calculate radius based on viewport size
     const vpWidth = this.viewport.offsetWidth;
-    this.radius = Math.min(vpWidth * 0.38, 220);
+    this.radius = Math.min(vpWidth * 0.35, 310);
     const total = this.cards.length;
     const angleStep = 360 / total;
 
-    // Position cards
     this.cards.forEach((card, i) => {
-      const angle = i * angleStep - 90; // Start from top
+      const angle = i * angleStep - 90;
       this.cardAngles.push(angle);
       card.dataset.angle = angle;
     });
 
-    // Setup spokes
     this.spokes.forEach((spoke, i) => {
-      const angle = this.cardAngles[i];
-      spoke.style.width = this.radius + 'px';
-      spoke.style.transform = `rotate(${angle}deg)`;
+      if (i < this.cardAngles.length) {
+        spoke.style.width = this.radius + 'px';
+        spoke.style.transform = `rotate(${this.cardAngles[i]}deg)`;
+      }
     });
 
-    // Setup orbit dots
     this.orbitDots.forEach((dot, i) => {
       const dotAngle = (i / this.orbitDots.length) * 360;
       const rad = (dotAngle * Math.PI) / 180;
-      const r = this.radius + 20;
+      const r = this.radius + 40;
       dot.style.marginLeft = Math.cos(rad) * r + 'px';
       dot.style.marginTop = Math.sin(rad) * r + 'px';
     });
 
-    // Card hover events
     this.cards.forEach((card, i) => {
       card.addEventListener('mouseenter', () => {
         this.hoveredCard = i;
-        this.targetSpeed = 0.03;
+        this.targetSpeed = 0.015;
       });
       card.addEventListener('mouseleave', () => {
         this.hoveredCard = null;
-        this.targetSpeed = 0.25;
+        this.targetSpeed = 0.18;
       });
     });
 
-    // Viewport hover
     this.viewport.addEventListener('mouseenter', () => {
-      if (this.hoveredCard === null) this.targetSpeed = 0.12;
+      if (this.hoveredCard === null) this.targetSpeed = 0.08;
     });
     this.viewport.addEventListener('mouseleave', () => {
       this.hoveredCard = null;
-      this.targetSpeed = 0.25;
+      this.targetSpeed = 0.18;
     });
 
-    // Observe for scroll trigger
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting && !this.isRunning) {
@@ -347,63 +339,57 @@ class ServiceWheel {
           this.animate();
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
     obs.observe(this.viewport);
   }
 
   animate() {
-    // Smooth speed transition
-    this.currentSpeed += (this.targetSpeed - this.currentSpeed) * 0.05;
+    this.currentSpeed += (this.targetSpeed - this.currentSpeed) * 0.04;
     this.angle += this.currentSpeed;
     if (this.angle >= 360) this.angle -= 360;
 
-    // Rotate wheel
     this.wheel.style.transform = `rotate(${this.angle}deg)`;
 
-    // Update spokes
     this.spokes.forEach((spoke, i) => {
-      spoke.style.transform = `rotate(${this.cardAngles[i] + this.angle}deg)`;
+      if (i < this.cardAngles.length) {
+        spoke.style.transform = `rotate(${this.cardAngles[i] + this.angle}deg)`;
+      }
     });
 
-    // Position & counter-rotate cards
     this.cards.forEach((card, i) => {
       const totalAngle = this.cardAngles[i] + this.angle;
       const rad = (totalAngle * Math.PI) / 180;
       const x = Math.cos(rad) * this.radius;
       const y = Math.sin(rad) * this.radius;
 
-      const halfW = card.offsetWidth / 2;
-      const halfH = card.offsetHeight / 2;
+      // 280x280 square element with border-radius:50%
+      const cardSize = card.offsetWidth || 280;
+      const halfSize = cardSize / 2;
 
-      card.style.left = `calc(50% + ${x}px - ${halfW}px)`;
-      card.style.top = `calc(50% + ${y}px - ${halfH}px)`;
+      card.style.left = `calc(50% + ${x}px - ${halfSize}px)`;
+      card.style.top = `calc(50% + ${y}px - ${halfSize}px)`;
 
-      // Counter-rotate so card stays upright
       const inner = card.querySelector('.wheel-card-inner');
       if (inner) {
-        inner.style.transform = `rotate(${-this.angle}deg)`;
-      }
+        const isHovered = this.hoveredCard === i;
+        const scale = 0.78 + (Math.sin(rad) + 1) * 0.11;
 
-      // Z-index based on position (cards at bottom appear in front)
-      const zIndex = Math.round(Math.sin(rad) * 10) + 10;
-      card.style.zIndex = this.hoveredCard === i ? 100 : zIndex;
-
-      // Scale based on position (cards at bottom slightly larger)
-      const scale = 0.85 + (Math.sin(rad) + 1) * 0.075;
-      if (this.hoveredCard !== i) {
-        inner.style.transform = `rotate(${-this.angle}deg) scale(${scale})`;
-        card.style.opacity = 0.5 + (Math.sin(rad) + 1) * 0.25;
-      } else {
-        inner.style.transform = `rotate(${-this.angle}deg) scale(1.08)`;
-        card.style.opacity = 1;
+        if (isHovered) {
+          inner.style.transform = `rotate(${-this.angle}deg) scale(1.06)`;
+          card.style.opacity = 1;
+          card.style.zIndex = 100;
+        } else {
+          inner.style.transform = `rotate(${-this.angle}deg) scale(${scale})`;
+          card.style.opacity = 0.35 + (Math.sin(rad) + 1) * 0.35;
+          card.style.zIndex = Math.round(Math.sin(rad) * 10) + 10;
+        }
       }
     });
 
-    // Update orbit dots
     this.orbitDots.forEach((dot, i) => {
       const dotAngle = ((i / this.orbitDots.length) * 360) + this.angle * 0.3;
       const rad = (dotAngle * Math.PI) / 180;
-      const r = this.radius + 25;
+      const r = this.radius + 45;
       dot.style.marginLeft = Math.cos(rad) * r + 'px';
       dot.style.marginTop = Math.sin(rad) * r + 'px';
     });
@@ -412,7 +398,6 @@ class ServiceWheel {
   }
 }
 
-// Initialize wheel
 document.querySelectorAll('.wheel-viewport').forEach(vp => new ServiceWheel(vp));
 
 // ===== HERO 3D MOUSE =====
