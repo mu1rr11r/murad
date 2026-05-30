@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdulrahman Murad | Graphic Designer</title>
     
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
    <link rel="stylesheet" href="./styl.css">
@@ -55,10 +52,9 @@
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
-        <canvas id="three-canvas"></canvas>
+        <canvas id="three-canvas" class="section-canvas"></canvas>
         <div class="hero-content">
             
-            <!-- LARGE LOGO PLACEHOLDER IN HERO -->
             <div class="hero-logo-wrapper anim-fade-up">
                 <img src="./Img/2.png" alt="Abdulrahman Murad Large Logo" class="hero-logo-large" id="hero-large-logo">
             </div>
@@ -106,9 +102,9 @@
         </div>
     </section>
 
-    <!-- About Section - With 3D Background -->
+    <!-- About Section -->
     <section class="about-section section-padding" id="about">
-        <canvas id="about-canvas"></canvas>
+        <canvas id="about-canvas" class="section-canvas"></canvas>
         
         <div class="row align-items-center g-5">
             <div class="col-lg-7">
@@ -134,14 +130,15 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <div class="tilt-wrapper anim-fade-up">
-                    <div class="tilt-card" id="aboutImg">
-                        <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Abdulrahman Murad">
-                        <div class="tilt-overlay">
-                            <h5>Abdulrahman Murad</h5>
-                            <p style="margin:0; color:#aaa; font-size:0.9rem;">Brand Identity | Advertising | GRAPHIC DESIGNER</p>
-                        </div>
-                    </div>
+                <!-- الصورة الشخصية العائمة (تم إزالة anim-fade-up لمنع اختفائها) -->
+                <div class="floating-photo-container" id="photoContainer">
+                    <div class="photo-glow"></div>
+                    <div class="photo-ring"></div>
+                    <div class="photo-ring-2"></div>
+                    <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" 
+                         alt="Abdulrahman Murad" 
+                         class="floating-photo" 
+                         id="floatingPhoto">
                 </div>
             </div>
         </div>
@@ -149,6 +146,8 @@
 
     <!-- 3D SERVICES SECTION -->
     <section class="services-section section-padding" id="services">
+        <canvas id="services-canvas" class="section-canvas"></canvas>
+        
         <div class="text-center mb-5">
             <div class="section-badge anim-fade-up">03 — SERVICES</div>
             <h2 class="section-title anim-fade-up">Services & <br><span class="outline-text">Solutions</span></h2>
@@ -162,23 +161,19 @@
                 </div>
             </div>
            <div class="col-md-6 col-lg-4">
-    <div class="service-card-3d" 
-         style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=800&fit=crop'); cursor: pointer;" 
-         data-tilt
-         onclick="window.location.href='service-2.html'">
-
-        <div class="service-glow"></div>
-        <div class="service-overlay-3d"></div>
-        <div class="service-num-3d">02</div>
-
-        <div class="service-content-3d">
-            <h4 class="service-title-3d">Social Media Design</h4>
-            <p class="service-desc-3d">
-                Creative social media content and visual systems for digital platforms.
-            </p>
-        </div>
-    </div>
-</div>
+                <div class="service-card-3d" 
+                     style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=800&fit=crop'); cursor: pointer;" 
+                     data-tilt
+                     onclick="window.location.href='service-2.html'">
+                    <div class="service-glow"></div>
+                    <div class="service-overlay-3d"></div>
+                    <div class="service-num-3d">02</div>
+                    <div class="service-content-3d">
+                        <h4 class="service-title-3d">Social Media Design</h4>
+                        <p class="service-desc-3d">Creative social media content and visual systems for digital platforms.</p>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-6 col-lg-4">
                 <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=800&fit=crop');" data-tilt>
                     <div class="service-glow"></div><div class="service-overlay-3d"></div><div class="service-num-3d">03</div>
@@ -210,10 +205,10 @@
 
     <!-- Experience Section -->
     <section class="experience-section section-padding" id="experience">
+        <canvas id="experience-canvas" class="section-canvas"></canvas>
+        
         <div class="row">
             <div class="col-lg-5">
-                
-                <!-- LARGE LOGO PLACEHOLDER IN EXPERIENCE -->
                 <div class="exp-logo-wrapper anim-fade-up mb-4">
                     <img src="./Img/2.png" alt="Experience Logo" class="exp-logo-large">
                 </div>
@@ -251,6 +246,8 @@
 
     <!-- Contact Section -->
     <section class="contact-section section-padding" id="contact">
+        <canvas id="contact-canvas" class="section-canvas"></canvas>
+        
         <div class="row g-5">
             <div class="col-lg-5">
                 <div class="section-badge anim-fade-up">05 — CONTACT</div>
