@@ -33,20 +33,19 @@ function animateCursor() {
 }
 animateCursor();
 
-document.querySelectorAll('a, button, input, textarea, .tag, .service-card-3d, .tool-card, .hero-logo-wrapper, .exp-logo-wrapper, .floating-photo').forEach(el => {
+document.querySelectorAll('a, button, input, textarea, .tag, .service-card-3d, .tool-card, .hero-logo-wrapper, .exp-logo-wrapper').forEach(el => {
     el.addEventListener('mouseenter', () => outline.classList.add('hover'));
     el.addEventListener('mouseleave', () => outline.classList.remove('hover'));
 });
 
 // ============================================
-//  3. THREE.JS - 3D Backgrounds (Green Color Only)
+//  3. THREE.JS - 3D Backgrounds
 // ============================================
-const GREEN = 0x00ff88; // اللون الأخضر للأشكال
+const GREEN = 0x00ff88;
 
 let scrollY_pos = 0;
 window.addEventListener('scroll', () => { scrollY_pos = window.scrollY; });
 
-// --- Helper: إنشاء سين كامل ---
 function createScene(canvasId, geometry, camZ) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return null;
@@ -61,7 +60,6 @@ function createScene(canvasId, geometry, camZ) {
     camera.aspect = parent.offsetWidth / parent.offsetHeight;
     camera.updateProjectionMatrix();
     
-    // اللون الأخضر للأشكال الـ Wireframe
     const material = new THREE.MeshBasicMaterial({ 
         color: GREEN, wireframe: true, transparent: true, opacity: 0.08 
     });
@@ -72,28 +70,15 @@ function createScene(canvasId, geometry, camZ) {
     return { scene, camera, renderer, mesh, canvas, camZ };
 }
 
-// --- إنشاء كل السيكشنز بشكل مختلف ---
-
-// 1) Hero: TorusKnot
 const heroScene = createScene('three-canvas', new THREE.TorusKnotGeometry(8, 2.5, 200, 30), 20);
-
-// 2) About: Icosahedron
 const aboutSceneObj = createScene('about-canvas', new THREE.IcosahedronGeometry(4, 1), 8);
-
-// 3) Services: Octahedron
 const servicesSceneObj = createScene('services-canvas', new THREE.OctahedronGeometry(5, 1), 12);
-
-// 4) Experience: Dodecahedron
 const experienceSceneObj = createScene('experience-canvas', new THREE.DodecahedronGeometry(4, 0), 10);
-
-// 5) Contact: Torus
 const contactSceneObj = createScene('contact-canvas', new THREE.TorusGeometry(5, 1.5, 16, 100), 15);
 
-// --- حلقة الأنيميشن الموحدة ---
 function animateThree() {
     requestAnimationFrame(animateThree);
     
-    // Hero - TorusKnot
     if (heroScene) {
         heroScene.mesh.rotation.x += 0.002;
         heroScene.mesh.rotation.y += 0.001;
@@ -103,7 +88,6 @@ function animateThree() {
         heroScene.renderer.render(heroScene.scene, heroScene.camera);
     }
     
-    // About - Icosahedron
     if (aboutSceneObj) {
         aboutSceneObj.mesh.rotation.x += 0.003;
         aboutSceneObj.mesh.rotation.y -= 0.002;
@@ -111,7 +95,6 @@ function animateThree() {
         aboutSceneObj.renderer.render(aboutSceneObj.scene, aboutSceneObj.camera);
     }
     
-    // Services - Octahedron
     if (servicesSceneObj) {
         servicesSceneObj.mesh.rotation.x += 0.002;
         servicesSceneObj.mesh.rotation.y += 0.003;
@@ -119,7 +102,6 @@ function animateThree() {
         servicesSceneObj.renderer.render(servicesSceneObj.scene, servicesSceneObj.camera);
     }
     
-    // Experience - Dodecahedron
     if (experienceSceneObj) {
         experienceSceneObj.mesh.rotation.x -= 0.002;
         experienceSceneObj.mesh.rotation.y += 0.001;
@@ -127,7 +109,6 @@ function animateThree() {
         experienceSceneObj.renderer.render(experienceSceneObj.scene, experienceSceneObj.camera);
     }
     
-    // Contact - Torus
     if (contactSceneObj) {
         contactSceneObj.mesh.rotation.x += 0.001;
         contactSceneObj.mesh.rotation.y -= 0.003;
@@ -137,7 +118,6 @@ function animateThree() {
 }
 animateThree();
 
-// --- Resize لكل الكانفاسات ---
 window.addEventListener('resize', () => {
     const scenes = [heroScene, aboutSceneObj, servicesSceneObj, experienceSceneObj, contactSceneObj];
     scenes.forEach(s => {
@@ -150,39 +130,7 @@ window.addEventListener('resize', () => {
 });
 
 // ============================================
-//  4. الصورة الشخصية العائمة 3D
-// ============================================
-const floatingPhoto = document.getElementById('floatingPhoto');
-const photoContainer = document.getElementById('photoContainer');
-
-if (photoContainer && floatingPhoto) {
-    // حركة الماوس على الصورة - دوران 3D
-    photoContainer.addEventListener('mousemove', (e) => {
-        const rect = photoContainer.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        
-        floatingPhoto.style.animation = 'none'; // وقف الأنيميشن وقت الماوس
-        floatingPhoto.style.transform = `
-            rotateY(${x * 30}deg) 
-            rotateX(${-y * 25}deg) 
-            translateX(${x * 20}px) 
-            translateY(${y * 15}px)
-            scale(1.05)
-        `;
-    });
-    
-    photoContainer.addEventListener('mouseleave', () => {
-        floatingPhoto.style.transform = '';
-        // رجّع الأنيميشن بعد لحظة
-        setTimeout(() => {
-            floatingPhoto.style.animation = '';
-        }, 300);
-    });
-}
-
-// ============================================
-//  5. GSAP SCROLL ANIMATIONS
+//  4. GSAP SCROLL ANIMATIONS
 // ============================================
 gsap.registerPlugin(ScrollTrigger);
 
@@ -193,7 +141,11 @@ function animateHero() {
       .from('.hero-desc', { opacity: 0, y: 30, duration: 0.8 }, "-=0.7")
       .from('.hero-btns .btn-custom', { opacity: 0, y: 30, duration: 0.6, stagger: 0.1 }, "-=0.5")
       .from('.hero-stats .stat-item', { opacity: 0, y: 30, duration: 0.6, stagger: 0.1 }, "-=0.4")
-      .from('.hero-sidebar > *', { opacity: 0, x: 30, duration: 0.6, stagger: 0.1 }, "-=0.8");
+      .from('.hero-sidebar > *', { opacity: 0, x: 30, duration: 0.6, stagger: 0.1 }, "-=0.6");
+    
+    setTimeout(() => {
+        triggerHeroSpider();
+    }, 800);
 }
 
 gsap.utils.toArray('.anim-fade-up').forEach(el => {
@@ -205,12 +157,6 @@ gsap.utils.toArray('.anim-fade-up').forEach(el => {
     }
 });
 
-// أنيميشن ظهور الصورة الشخصية (منفصل لمنع التضارب اللي كان بيخفيها)
-gsap.from('#photoContainer', {
-    scrollTrigger: { trigger: '#photoContainer', start: 'top 85%' },
-    opacity: 0, y: 60, duration: 1, ease: "power3.out"
-});
-
 gsap.utils.toArray('.service-card-3d').forEach((card, i) => {
     gsap.from(card, {
         scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none none' },
@@ -219,7 +165,7 @@ gsap.utils.toArray('.service-card-3d').forEach((card, i) => {
 });
 
 // ============================================
-//  6. 3D TILT & SPOTLIGHT ON SERVICE CARDS
+//  5. 3D TILT & SPOTLIGHT ON SERVICE CARDS
 // ============================================
 const serviceCards = document.querySelectorAll('.service-card-3d');
 serviceCards.forEach(card => {
@@ -246,6 +192,216 @@ serviceCards.forEach(card => {
         glow.style.background = 'transparent';
     });
 });
+
+// ============================================
+//  6. ★ SPIDER-WEB 3D DROP ANIMATION ★
+// ============================================
+
+function initSpiderState(dropEl) {
+    const anchor = dropEl.querySelector('.spider-anchor');
+    const thread = dropEl.querySelector('.spider-thread');
+    const imgWrap = dropEl.querySelector('.spider-img-wrap');
+    
+    gsap.set(anchor, { opacity: 0, scale: 0 });
+    gsap.set(thread, { height: 0 });
+    gsap.set(imgWrap, { 
+        opacity: 0, 
+        y: -40, 
+        scale: 0.5, 
+        rotateY: 0, 
+        rotateX: 0,
+        transformStyle: 'preserve-3d'
+    });
+    
+    return { anchor, thread, imgWrap };
+}
+
+// ★★★ هنا التعديل — طول الخيط أقصر ★★★
+function getThreadHeight(dropEl) {
+    const section = dropEl.closest('section');
+    if (!section) return 150; // كان 300، بقى 150
+    const sectionH = section.offsetHeight;
+    // كان 0.45 (نص السيكشن)، بقى 0.25 (ربع السيكشن)
+    return Math.floor(sectionH * 0.25);
+}
+
+function animateSpiderIn(anchor, thread, imgWrap, targetHeight, startDelay) {
+    imgWrap.classList.remove('dropped');
+    gsap.killTweensOf([anchor, thread, imgWrap]);
+    
+    const tl = gsap.timeline({ delay: startDelay || 0 });
+    
+    tl.to(anchor, { 
+        opacity: 1, scale: 1, duration: 0.4, ease: "back.out(3)" 
+    });
+    
+    tl.to(thread, { 
+        height: targetHeight, 
+        duration: 1.4, 
+        ease: "power1.out" 
+    }, "-=0.2");
+    
+    tl.to(imgWrap, { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1,
+        rotateY: 720,
+        rotateX: 15,
+        duration: 1.6, 
+        ease: "power2.out" 
+    }, "-=1.3");
+    
+    tl.to(imgWrap, { 
+        rotateY: 0, 
+        rotateX: 0, 
+        y: -12,
+        duration: 0.9, 
+        ease: "power3.out" 
+    }, "-=0.2");
+    
+    tl.to(imgWrap, { 
+        y: 0, 
+        duration: 0.6, 
+        ease: "bounce.out(1, 0.4)" 
+    });
+    
+    tl.add(() => { 
+        imgWrap.classList.add('dropped'); 
+    }, "+=0.2");
+}
+
+function animateSpiderOut(anchor, thread, imgWrap) {
+    imgWrap.classList.remove('dropped');
+    gsap.killTweensOf([anchor, thread, imgWrap]);
+    
+    const tl = gsap.timeline();
+    
+    tl.to(imgWrap, { 
+        opacity: 0, 
+        y: -40, 
+        scale: 0.5, 
+        rotateY: -360,
+        rotateX: -10,
+        duration: 0.9, 
+        ease: "power2.in" 
+    });
+    
+    tl.to(thread, { 
+        height: 0, duration: 0.5, ease: "power2.in" 
+    }, "-=0.5");
+    
+    tl.to(anchor, { 
+        opacity: 0, scale: 0, duration: 0.25, ease: "power2.in" 
+    }, "-=0.3");
+}
+
+let heroSpiderData = null;
+
+function initHeroSpider() {
+    const drop = document.getElementById('spider-hero');
+    if (!drop) return;
+    
+    const data = initSpiderState(drop);
+    const targetH = getThreadHeight(drop);
+    heroSpiderData = { ...data, targetH };
+}
+
+function triggerHeroSpider() {
+    if (!heroSpiderData) return;
+    animateSpiderIn(
+        heroSpiderData.anchor, 
+        heroSpiderData.thread, 
+        heroSpiderData.imgWrap, 
+        heroSpiderData.targetH, 
+        0
+    );
+}
+
+function initHeroSpiderScroll() {
+    const drop = document.getElementById('spider-hero');
+    if (!drop) return;
+    
+    const section = drop.closest('section');
+    if (!section) return;
+    
+    ScrollTrigger.create({
+        trigger: section,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        onEnter: () => {
+            if (!heroSpiderData) return;
+            animateSpiderIn(
+                heroSpiderData.anchor, 
+                heroSpiderData.thread, 
+                heroSpiderData.imgWrap, 
+                heroSpiderData.targetH, 
+                0
+            );
+        },
+        onLeave: () => {
+            if (!heroSpiderData) return;
+            animateSpiderOut(
+                heroSpiderData.anchor, 
+                heroSpiderData.thread, 
+                heroSpiderData.imgWrap
+            );
+        },
+        onEnterBack: () => {
+            if (!heroSpiderData) return;
+            animateSpiderIn(
+                heroSpiderData.anchor, 
+                heroSpiderData.thread, 
+                heroSpiderData.imgWrap, 
+                heroSpiderData.targetH, 
+                0
+            );
+        },
+        onLeaveBack: () => {
+            if (!heroSpiderData) return;
+            animateSpiderOut(
+                heroSpiderData.anchor, 
+                heroSpiderData.thread, 
+                heroSpiderData.imgWrap
+            );
+        }
+    });
+}
+
+let aboutSpiderData = null;
+
+function initAboutSpider() {
+    const drop = document.getElementById('spider-about');
+    if (!drop) return;
+    
+    const section = drop.closest('section');
+    if (!section) return;
+    
+    const data = initSpiderState(drop);
+    const targetH = getThreadHeight(drop);
+    aboutSpiderData = { ...data, targetH };
+    
+    ScrollTrigger.create({
+        trigger: section,
+        start: 'top 60%',
+        end: 'bottom 40%',
+        onEnter: () => {
+            animateSpiderIn(data.anchor, data.thread, data.imgWrap, targetH, 0);
+        },
+        onLeave: () => {
+            animateSpiderOut(data.anchor, data.thread, data.imgWrap);
+        },
+        onEnterBack: () => {
+            animateSpiderIn(data.anchor, data.thread, data.imgWrap, targetH, 0);
+        },
+        onLeaveBack: () => {
+            animateSpiderOut(data.anchor, data.thread, data.imgWrap);
+        }
+    });
+}
+
+initHeroSpider();
+initHeroSpiderScroll();
+initAboutSpider();
 
 // ============================================
 //  7. FORM SUBMIT

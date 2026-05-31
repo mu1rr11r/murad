@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-   <link rel="stylesheet" href="./styl.css">
+    <link rel="stylesheet" href="./styl.css">
 </head>
 <body>
 
@@ -53,34 +53,47 @@
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <canvas id="three-canvas" class="section-canvas"></canvas>
-        <div class="hero-content">
-            
-            <div class="hero-logo-wrapper anim-fade-up">
-                <img src="./Img/2.png" alt="Abdulrahman Murad Large Logo" class="hero-logo-large" id="hero-large-logo">
-            </div>
-
-            <div class="hero-badge section-badge anim-fade-up">01 — Home</div>
-            
-            <div class="line-reveal">
-                <h1 class="hero-title">ABDULRAHMAN</h1>
-            </div>
-            <div class="line-reveal">
-                <h1 class="hero-title outline-text">MURAD</h1>
-            </div>
-            
-            <p class="hero-desc anim-fade-up">Passionate graphic designer and photographer creating clean and engaging visual experiences that help brands stand out — from branding identities to digital content.</p>
-            
-            <div class="d-flex gap-3 flex-wrap anim-fade-up hero-btns">
-                <a href="#contact" class="btn-custom">Start a Project <i class="fas fa-arrow-right"></i></a>
-                <a href="#services" class="btn-custom outline">Explore Services</a>
-            </div>
-            
-            <div class="hero-stats anim-fade-up">
-                <div class="stat-item"><h3>3+</h3><p>Years</p></div>
-                <div class="stat-item"><h3>3</h3><p>Companies</p></div>
-                <div class="stat-item"><h3>5</h3><p>Specialties</p></div>
+        
+        <!-- ★ Spider-Drop: Hero Image — ينزل بخيط عنكبوت ويلف 3D -->
+        <div class="spider-drop spider-hero" id="spider-hero" style="right: 8%;">
+            <div class="spider-anchor"></div>
+            <div class="spider-thread"></div>
+            <div class="spider-img-wrap">
+                <img src="./Img/2.png" alt="Creative Design">
             </div>
         </div>
+
+        <div class="hero-inner">
+            <div class="hero-content">
+                
+                <div class="hero-logo-wrapper anim-fade-up">
+                    <img src="./Img/2.png" alt="Abdulrahman Murad Large Logo" class="hero-logo-large" id="hero-large-logo">
+                </div>
+
+                <div class="hero-badge section-badge anim-fade-up"><span class="niagara">01</span> — Home</div>
+                
+                <div class="line-reveal">
+                    <h1 class="hero-title">ABDULRAHMAN</h1>
+                </div>
+                <div class="line-reveal">
+                    <h1 class="hero-title outline-text">MURAD</h1>
+                </div>
+                
+                <p class="hero-desc anim-fade-up">Passionate graphic designer and photographer creating clean and engaging visual experiences that help brands stand out — from branding identities to digital content.</p>
+                
+                <div class="d-flex gap-3 flex-wrap anim-fade-up hero-btns">
+                    <a href="#contact" class="btn-custom">Start a Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#services" class="btn-custom outline">Explore Services</a>
+                </div>
+                
+                <div class="hero-stats anim-fade-up">
+                    <div class="stat-item"><h3 class="niagara">3+</h3><p>Years</p></div>
+                    <div class="stat-item"><h3 class="niagara">3</h3><p>Companies</p></div>
+                    <div class="stat-item"><h3 class="niagara">5</h3><p>Specialties</p></div>
+                </div>
+            </div>
+        </div>
+
         <div class="hero-sidebar">
             <div class="status-badge"><div class="status-dot"></div>Available for work</div>
             <div class="sidebar-text">alshymybdalrhmnmrad@gmail.com</div>
@@ -106,10 +119,19 @@
     <section class="about-section section-padding" id="about">
         <canvas id="about-canvas" class="section-canvas"></canvas>
         
+        <!-- ★ Spider-Drop: About Image — ينزل بخيط عنكبوت ويلف 3D -->
+        <div class="spider-drop spider-about" id="spider-about" style="right: 7%;">
+            <div class="spider-anchor"></div>
+            <div class="spider-thread"></div>
+            <div class="spider-img-wrap">
+                <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Abdulrahman Murad">
+            </div>
+        </div>
+
         <div class="row align-items-center g-5">
             <div class="col-lg-7">
-                <div class="section-badge anim-fade-up">02 — ABOUT ME</div>
-                <h2 class="section-title anim-fade-up">3+ Years of<br>Experience <span class="outline-text">Creative</span> Designer</h2>
+                <div class="section-badge anim-fade-up"><span class="niagara">02</span> — ABOUT ME</div>
+                <h2 class="section-title anim-fade-up"><span class="niagara" style="font-size:inherit;">3+</span> Years of<br>Experience <span class="outline-text">Creative</span> Designer</h2>
                 <p class="about-text anim-fade-up">I am a passionate graphic designer and photographer dedicated to creating clean and engaging visual experiences that help brands stand out. I specialize in social media campaigns, logo design, and company profiles, combining creativity with clear and organized design.</p>
                 <p class="about-text anim-fade-up">I enjoy paying attention to details and always aim to create visuals that reflect each brand's personality in a simple and authentic way.</p>
                 <div class="tags-list anim-fade-up">
@@ -127,17 +149,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5">
-                <!-- الصورة الشخصية العائمة (تم إزالة anim-fade-up لمنع اختفائها) -->
-                <div class="floating-photo-container" id="photoContainer">
-                    <div class="photo-glow"></div>
-                    <div class="photo-ring"></div>
-                    <div class="photo-ring-2"></div>
-                    <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" 
-                         alt="Abdulrahman Murad" 
-                         class="floating-photo" 
-                         id="floatingPhoto">
-                </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <!-- المساحة فارغة لأن الصورة دلوقتي في spider-drop -->
             </div>
         </div>
     </section>
@@ -145,178 +158,175 @@
     <!-- 3D SERVICES SECTION -->
     <section class="services-section section-padding" id="services">
         <canvas id="services-canvas" class="section-canvas"></canvas>
-        
+
         <div class="text-center mb-5">
-            <div class="section-badge anim-fade-up">03 — SERVICES</div>
+            <div class="section-badge anim-fade-up"><span class="niagara">03</span> — SERVICES</div>
             <h2 class="section-title anim-fade-up">Services & <br><span class="outline-text">Solutions</span></h2>
             <p class="about-text mx-auto anim-fade-up">Every project crafted with precision, creativity, and strategic vision.</p>
         </div>
        <div class="row g-4">
-    <!-- 00: CV Download Card (First Card - No Number) -->
-    <div class="col-md-6 col-lg-4">
-        <div class="service-card-3d" 
-             style="background-image: url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=800&fit=crop'); cursor: pointer;" 
-             data-tilt
-             onclick="window.open('path-to-your-cv.pdf', '_blank')">
-            <div class="service-glow"></div>
-            <div class="service-overlay-3d"></div>
-            <!-- تم ترك مكان الرقم فارغاً بناءً على طلبك -->
-            <div class="service-num-3d"></div>
-            <div class="service-content-3d">
-                <h4 class="service-title-3d">My Curriculum Vitae</h4>
-                <p class="service-desc-3d">View or download my professional CV, detailed experience, and career history.</p>
+            <!-- 00: CV Download Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card-3d" 
+                     style="background-image: url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=800&fit=crop'); cursor: pointer;" 
+                     data-tilt
+                     onclick="window.open('path-to-your-cv.pdf', '_blank')">
+                    <div class="service-glow"></div>
+                    <div class="service-overlay-3d"></div>
+                    <div class="service-num-3d"></div>
+                    <div class="service-content-3d">
+                        <h4 class="service-title-3d">My Curriculum Vitae</h4>
+                        <p class="service-desc-3d">View or download my professional CV, detailed experience, and career history.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 01: Social Media Designs -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card-3d" 
+                     style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=800&fit=crop'); cursor: pointer;" 
+                     data-tilt
+                     onclick="window.location.href='service-2.html'">
+                    <div class="service-glow"></div>
+                    <div class="service-overlay-3d"></div>
+                    <div class="service-num-3d">01</div>
+                    <div class="service-content-3d">
+                        <h4 class="service-title-3d">Social Media Designs</h4>
+                        <p class="service-desc-3d">Creative social media content and visual systems for digital platforms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 02: Advertising Campaigns -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=800&fit=crop');" data-tilt>
+                    <div class="service-glow"></div>
+                    <div class="service-overlay-3d"></div>
+                    <div class="service-num-3d">02</div>
+                    <div class="service-content-3d">
+                        <h4 class="service-title-3d">Advertising Campaigns</h4>
+                        <p class="service-desc-3d">Developing creative campaign concepts and unique visual directions for marketing campaigns.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03: Brand Identity & Logos -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=800&fit=crop');" data-tilt>
+                    <div class="service-glow"></div>
+                    <div class="service-overlay-3d"></div>
+                    <div class="service-num-3d">03</div>
+                    <div class="service-content-3d">
+                        <h4 class="service-title-3d">Brand Identity & Logos</h4>
+                        <p class="service-desc-3d">Building unique logos and complete visual identities that reflect each brand's personality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04: Corporate Profiles -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=800&fit=crop');" data-tilt>
+                    <div class="service-glow"></div>
+                    <div class="service-overlay-3d"></div>
+                    <div class="service-num-3d">04</div>
+                    <div class="service-content-3d">
+                        <h4 class="service-title-3d">Corporate Profiles</h4>
+                        <p class="service-desc-3d">Professional company profiles and corporate presentations with clean modern layouts.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- 01: Social Media Designs -->
-    <div class="col-md-6 col-lg-4">
-        <div class="service-card-3d" 
-             style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=800&fit=crop'); cursor: pointer;" 
-             data-tilt
-             onclick="window.location.href='service-2.html'">
-            <div class="service-glow"></div>
-            <div class="service-overlay-3d"></div>
-            <div class="service-num-3d">01</div>
-            <div class="service-content-3d">
-                <h4 class="service-title-3d">Social Media Designs</h4>
-                <p class="service-desc-3d">Creative social media content and visual systems for digital platforms.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 02: Advertising Campaigns -->
-    <div class="col-md-6 col-lg-4">
-        <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=800&fit=crop');" data-tilt>
-            <div class="service-glow"></div>
-            <div class="service-overlay-3d"></div>
-            <div class="service-num-3d">02</div>
-            <div class="service-content-3d">
-                <h4 class="service-title-3d">Advertising Campaigns</h4>
-                <p class="service-desc-3d">Developing creative campaign concepts and unique visual directions for marketing campaigns.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 03: Brand Identity & Logos -->
-    <div class="col-md-6 col-lg-4">
-        <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=800&fit=crop');" data-tilt>
-            <div class="service-glow"></div>
-            <div class="service-overlay-3d"></div>
-            <div class="service-num-3d">03</div>
-            <div class="service-content-3d">
-                <h4 class="service-title-3d">Brand Identity & Logos</h4>
-                <p class="service-desc-3d">Building unique logos and complete visual identities that reflect each brand's personality.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 04: Corporate Profiles -->
-    <div class="col-md-6 col-lg-4">
-        <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=800&fit=crop');" data-tilt>
-            <div class="service-glow"></div>
-            <div class="service-overlay-3d"></div>
-            <div class="service-num-3d">04</div>
-            <div class="service-content-3d">
-                <h4 class="service-title-3d">Corporate Profiles</h4>
-                <p class="service-desc-3d">Professional company profiles and corporate presentations with clean modern layouts.</p>
-            </div>
-        </div>
-    </div>
-
-
-</div>
     </section>
 
     <!-- Experience Section -->
     <section class="experience-section section-padding" id="experience">
         <canvas id="experience-canvas" class="section-canvas"></canvas>
-        
+
         <div class="row">
             <div class="col-lg-5">
                 <div class="exp-logo-wrapper anim-fade-up mb-4">
                     <img src="./Img/2.png" alt="Experience Logo" class="exp-logo-large">
                 </div>
 
-                <div class="section-badge anim-fade-up">04 — EXPERIENCE</div>
+                <div class="section-badge anim-fade-up"><span class="niagara">04</span> — EXPERIENCE</div>
                 <h2 class="section-title anim-fade-up">Professional <span class="outline-text">Journey</span></h2>
                 <p class="about-text anim-fade-up">Every role has shaped my creative perspective and enhanced my ability to deliver strategic and visual solutions.</p>
             </div>
            <div class="col-lg-7">
-    <div class="timeline">
-        <!-- Item 1: Senior & Team Lead -->
-        <div class="timeline-item anim-fade-up">
-            <div class="timeline-date">2025 — Present</div>
-            <div class="d-flex justify-content-between align-items-start">
-                <div>
-                    <h4 class="timeline-company">Brandology</h4>
-                    <div class="timeline-role">Senior Creative Designer  (Team Lead)</div>
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item anim-fade-up">
+                        <div class="timeline-date"><span class="niagara">2025</span> — Present</div>
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h4 class="timeline-company">Brandology</h4>
+                                <div class="timeline-role">Senior Creative Designer (Team Lead)</div>
+                            </div>
+                            <span class="status-active"><i class="fas fa-circle me-1" style="font-size:8px;"></i>Active</span>
+                        </div>
+                        <p class="timeline-desc">Advertising agency — contributing to visual identities, social media designs, and creative visual content for diverse clients.</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline-item anim-fade-up">
+                        <div class="timeline-date"><span class="niagara">2023</span> — <span class="niagara">2025</span></div>
+                        <h4 class="timeline-company">Al-Motakademah School</h4>
+                        <div class="timeline-role">Senior Visual Designer</div>
+                        <p class="timeline-desc">Advanced Schools in Saudi Arabia — contributed to visual design work supporting brand identity and institutional communication materials.</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline-item anim-fade-up">
+                        <div class="timeline-date"><span class="niagara">2022</span> — <span class="niagara">2023</span></div>
+                        <h4 class="timeline-company">MISR HOLLANDA CO.</h4>
+                        <div class="timeline-role">Junior Brand Designer</div>
+                        <p class="timeline-desc">Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.</p>
+                    </div>
                 </div>
-                <span class="status-active"><i class="fas fa-circle me-1" style="font-size:8px;"></i>Active</span>
             </div>
-            <p class="timeline-desc">Advertising agency — contributing to visual identities, social media designs, and creative visual content for diverse clients.</p>
-        </div>
-
-        <!-- Item 2: Senior -->
-        <div class="timeline-item anim-fade-up">
-            <div class="timeline-date">2023 — 2025</div>
-            <h4 class="timeline-company">Al-Motakademah School</h4>
-            <div class="timeline-role">Senior Visual Designer</div>
-            <p class="timeline-desc">Advanced Schools in Saudi Arabia — contributed to visual design work supporting brand identity and institutional communication materials.</p>
-        </div>
-
-        <!-- Item 3: Junior -->
-        <div class="timeline-item anim-fade-up">
-            <div class="timeline-date">2022 — 2023</div>
-            <h4 class="timeline-company">MISR HOLLANDA CO.</h4>
-            <div class="timeline-role">Junior Brand Designer</div>
-            <p class="timeline-desc">Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.</p>
-        </div>
-    </div>
-</div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact-section section-padding" id="contact">
         <canvas id="contact-canvas" class="section-canvas"></canvas>
-        
+
         <div class="row g-5">
             <div class="col-lg-5">
-                <div class="section-badge anim-fade-up">05 — CONTACT</div>
+                <div class="section-badge anim-fade-up"><span class="niagara">05</span> — CONTACT</div>
                 <h2 class="section-title anim-fade-up">Let's Start <br><span class="outline-text">Your Project</span></h2>
                 <p class="about-text anim-fade-up">Have an idea or project in mind? I'm here to help turn your vision into a unique visual experience.</p>
                <div class="mt-5">
-    <div class="contact-info-item anim-fade-up mb-3">
-        <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-        </div>
-        <div>
-            <div style="font-size:0.8rem; color:#666;">Email</div>
-            <a href="mailto:alshymybdalrhmnmrad@gmail.com" style="color: inherit; text-decoration: none;">alshymybdalrhmnmrad@gmail.com</a>
-        </div>
-    </div>
+                    <div class="contact-info-item anim-fade-up mb-3">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:0.8rem; color:#666;">Email</div>
+                            <a href="mailto:alshymybdalrhmnmrad@gmail.com" style="color: inherit; text-decoration: none;">alshymybdalrhmnmrad@gmail.com</a>
+                        </div>
+                    </div>
 
-    <div class="contact-info-item anim-fade-up mb-3">
-        <div class="contact-icon" style="color: #25D366;">
-            <i class="fab fa-whatsapp"></i>
-        </div>
-        <div>
-            <div style="font-size:0.8rem; color:#666;">WhatsApp (KSA)</div>
-            <a href="https://wa.me/966570093906" target="_blank" style="color: inherit; text-decoration: none; font-weight: bold;">+966 57 009 3906</a>
-        </div>
-    </div>
+                    <div class="contact-info-item anim-fade-up mb-3">
+                        <div class="contact-icon" style="color: #25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:0.8rem; color:#666;">WhatsApp (KSA)</div>
+                            <a href="https://wa.me/966570093906" target="_blank" style="color: inherit; text-decoration: none; font-weight: bold;">+966 57 009 3906</a>
+                        </div>
+                    </div>
 
-    <div class="contact-info-item anim-fade-up">
-        <div class="contact-icon" style="color: #25D366;">
-            <i class="fab fa-whatsapp"></i>
-        </div>
-        <div>
-            <div style="font-size:0.8rem; color:#666;">WhatsApp (EG)</div>
-            <a href="https://wa.me/201141179106" target="_blank" style="color: inherit; text-decoration: none; font-weight: bold;">+20 114 117 9106</a>
-        </div>
-    </div>
-</div>
+                    <div class="contact-info-item anim-fade-up">
+                        <div class="contact-icon" style="color: #25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:0.8rem; color:#666;">WhatsApp (EG)</div>
+                            <a href="https://wa.me/201141179106" target="_blank" style="color: inherit; text-decoration: none; font-weight: bold;">+20 114 117 9106</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-7">
                 <form class="anim-fade-up" id="contactForm">
