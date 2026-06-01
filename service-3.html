@@ -1,42 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Social Media Design Services - Abdulrahman Murad Portfolio" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Social Media Design Services - Abdulrahman Murad Portfolio">
 <title>Social Media Design | Abdulrahman Murad</title>
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="styl.css" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styl.css">
 
 <style>
-  :root { --black:#0a0a0a; --white:#f5f5f0; --green:#00ff6a; --text-muted:#888 }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--black);overflow-x:hidden}
-  .service-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 40px;text-align:center}
-  .service-hero h1{font-size:clamp(60px,8vw,100px);font-family:'Bebas Neue',sans-serif;color:var(--white);margin-bottom:20px;letter-spacing:3px}
-  .service-hero em{color:var(--green);font-style:normal}
-  .service-hero p{font-size:18px;color:var(--text-muted);max-width:600px;line-height:1.9;margin-bottom:40px}
-  .service-back{position:fixed;top:90px;left:40px;z-index:100}
-  .service-back a{color:var(--green);text-decoration:none;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px}
-  .image-comparison-section{padding:100px 20px;display:flex;justify-content:center;align-items:center}
-  .comparison-container{position:relative;width:100%;max-width:950px;height:550px;overflow:hidden;border-radius:24px;border:2px solid rgba(0,255,106,0.2);box-shadow:0 0 50px rgba(0,255,106,0.1),inset 0 0 50px rgba(0,255,106,0.05);cursor:ew-resize;user-select:none}
-  .before-image,.after-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .image-overlay{position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden}
-  .slider-line{position:absolute;top:0;left:50%;width:3px;height:100%;background:var(--green);transform:translateX(-50%);z-index:20;box-shadow:0 0 20px rgba(0,255,106,.5)}
-  .slider-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:bold;color:var(--black);z-index:30;box-shadow:0 10px 30px rgba(0,255,106,0.4);cursor:grab}
-  .slider-button:active{cursor:grabbing}
-  footer{padding:40px;text-align:center;color:#777}
-  #cursor{width:10px;height:10px;background:var(--green);border-radius:50%;position:fixed;pointer-events:none;z-index:9999}
-  #cursor-ring{width:40px;height:40px;border:2px solid var(--green);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;opacity:.5}
-  .long-preview-section{padding:120px 20px;background:var(--black)}
-  .preview-container{width:min(1200px,100%);margin:auto;border-radius:30px;overflow:hidden;border:1px solid rgba(0,255,106,.2);box-shadow:0 0 60px rgba(0,255,106,.08),inset 0 0 40px rgba(255,255,255,.03);background:#111}
-  .long-preview-image{width:100%;display:block}
-  @media(max-width:768px){.comparison-container{height:350px}.slider-button{width:55px;height:55px;font-size:22px}.service-back{left:20px}}
+:root{
+  --black:#0a0a0a;
+  --white:#f5f5f0;
+  --green:#00ff6a;
+  --text-muted:#888;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--black);
+  overflow-x:hidden;
+}
+
+/* Navbar */
+
+nav{
+  padding:20px 40px;
+}
+
+.nav-logo img{
+  display:block;
+}
+
+/* Back Button */
+
+.service-back{
+  position:fixed;
+  top:90px;
+  left:40px;
+  z-index:100;
+}
+
+.service-back a{
+  color:var(--green);
+  text-decoration:none;
+  font-family:'Space Mono', monospace;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+/* Project Preview */
+
+.long-preview-section{
+  padding:120px 20px;
+  background:var(--black);
+}
+
+.preview-container{
+  width:min(1200px,100%);
+  margin:auto;
+
+  border-radius:30px;
+  overflow:hidden;
+
+  border:1px solid rgba(0,255,106,.2);
+
+  box-shadow:
+    0 0 60px rgba(0,255,106,.08),
+    inset 0 0 40px rgba(255,255,255,.03);
+
+  background:#111;
+}
+
+.long-preview-image{
+  width:100%;
+  display:block;
+}
+
+/* Footer */
+
+footer{
+  padding:40px;
+  text-align:center;
+  color:#777;
+}
+
+/* Custom Cursor */
+
+#cursor{
+  width:10px;
+  height:10px;
+  background:var(--green);
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  z-index:9999;
+}
+
+#cursor-ring{
+  width:40px;
+  height:40px;
+  border:2px solid var(--green);
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  z-index:9998;
+  opacity:.5;
+}
+
+@media(max-width:768px){
+
+  .service-back{
+    left:20px;
+  }
+
+  #cursor,
+  #cursor-ring{
+    display:none;
+  }
+
+}
 </style>
 </head>
 
@@ -47,7 +140,7 @@
 
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
-    <img src="./Img/2.png" width="80" alt="">
+    <img src="./Img/2.png" width="80" alt="Logo">
   </a>
 </nav>
 
@@ -55,79 +148,37 @@
   <a href="index.html">← BACK</a>
 </div>
 
-<section class="image-comparison-section">
-
-  <div class="comparison-container" id="comparisonContainer">
-
-    <!-- BEFORE -->
-    <img
-      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&auto=format&fit=crop"
-      class="before-image"
-      alt="Before"
-    >
-
-    <!-- AFTER -->
-    <div class="image-overlay" id="imageOverlay">
-
-      <img
-        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&auto=format&fit=crop"
-        class="after-image"
-        alt="After"
-      >
-
-    </div>
-
-    <div class="slider-line" id="sliderLine"></div>
-
-    <div class="slider-button" id="sliderButton">
-      ↔
-    </div>
-
-  </div>
-
-</section>
-
 <section class="long-preview-section">
 
-
   <div class="preview-container">
-
     <img
       src="./Img/campaigns/5.jpg.jpeg"
       alt="Full Project Screenshot"
       class="long-preview-image"
     >
-
   </div>
     <div class="preview-container">
-
     <img
       src="./Img/campaigns/6.jpg.jpeg"
       alt="Full Project Screenshot"
       class="long-preview-image"
     >
-
   </div>
-      <div class="preview-container">
-
+    <div class="preview-container">
     <img
       src="./Img/campaigns/7.jpg.jpeg"
       alt="Full Project Screenshot"
       class="long-preview-image"
     >
-
   </div>
 
 </section>
+
 <footer>
   <div>© 2025 Abdulrahman Murad — All Rights Reserved</div>
 </footer>
 
 <script>
-/* ==========================
-   CUSTOM CURSOR
-========================== */
-
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
 
@@ -146,7 +197,6 @@ document.addEventListener('mousemove', (e) => {
 });
 
 function animateCursor() {
-
   ringX += (mouseX - ringX) * 0.12;
   ringY += (mouseY - ringY) * 0.12;
 
@@ -157,71 +207,6 @@ function animateCursor() {
 }
 
 animateCursor();
-
-/* ==========================
-   IMAGE COMPARISON
-========================== */
-
-const container =
-document.getElementById('comparisonContainer');
-
-const overlay =
-document.getElementById('imageOverlay');
-
-const button =
-document.getElementById('sliderButton');
-
-const line =
-document.getElementById('sliderLine');
-
-let isDragging = false;
-
-function moveSlider(clientX){
-
-  const rect =
-  container.getBoundingClientRect();
-
-  let position =
-  clientX - rect.left;
-
-  position =
-  Math.max(0,
-  Math.min(position, rect.width));
-
-  const percent =
-  (position / rect.width) * 100;
-
-  overlay.style.width =
-  percent + '%';
-
-  button.style.left =
-  percent + '%';
-
-  line.style.left =
-  percent + '%';
-}
-
-/* Mouse + Touch + Tablet */
-
-container.addEventListener(
-'pointerdown',
-(e)=>{
-  isDragging = true;
-  moveSlider(e.clientX);
-});
-
-window.addEventListener(
-'pointermove',
-(e)=>{
-  if(!isDragging) return;
-  moveSlider(e.clientX);
-});
-
-window.addEventListener(
-'pointerup',
-()=>{
-  isDragging = false;
-});
 </script>
 
 </body>
