@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./styl.css">
+  <link rel="stylesheet" href="./styl.css">
 </head>
 <body>
 
@@ -54,7 +54,6 @@
     <section class="hero-section" id="home">
         <canvas id="three-canvas" class="section-canvas"></canvas>
         
-        <!-- ★ Spider-Drop: Hero Image — ينزل بخيط عنكبوت ويلف 3D -->
         <div class="spider-drop spider-hero" id="spider-hero" style="right: 8%;">
             <div class="spider-anchor"></div>
             <div class="spider-thread"></div>
@@ -70,7 +69,7 @@
                     <img src="./Img/2.png" alt="Abdulrahman Murad Large Logo" class="hero-logo-large" id="hero-large-logo">
                 </div>
 
-                <div class="hero-badge section-badge anim-fade-up"><span class="niagara">01</span> — Home</div>
+                <div class="hero-badge section-badge anim-fade-up"><span class="badge-num">01</span> — Home</div>
                 
                 <div class="line-reveal">
                     <h1 class="hero-title">ABDULRAHMAN</h1>
@@ -87,9 +86,9 @@
                 </div>
                 
                 <div class="hero-stats anim-fade-up">
-                    <div class="stat-item"><h3 class="niagara">3+</h3><p>Years</p></div>
-                    <div class="stat-item"><h3 class="niagara">3</h3><p>Companies</p></div>
-                    <div class="stat-item"><h3 class="niagara">5</h3><p>Specialties</p></div>
+                    <div class="stat-item"><h3>3+</h3><p>Years</p></div>
+                    <div class="stat-item"><h3>3</h3><p>Companies</p></div>
+                    <div class="stat-item"><h3>5</h3><p>Specialties</p></div>
                 </div>
             </div>
         </div>
@@ -119,19 +118,18 @@
     <section class="about-section section-padding" id="about">
         <canvas id="about-canvas" class="section-canvas"></canvas>
         
-        <!-- ★ Spider-Drop: About Image — ينزل بخيط عنكبوت ويلف 3D -->
         <div class="spider-drop spider-about" id="spider-about" style="right: 7%;">
             <div class="spider-anchor"></div>
             <div class="spider-thread"></div>
             <div class="spider-img-wrap">
-                <img src="./Img/Professional_cinematic_portrait_of_the_202605111649 (1).jpeg" alt="Abdulrahman Murad">
+                <img src="./Img/anmishen026-06-01 at 1.42.21 PM.jpeg" alt="Abdulrahman Murad">
             </div>
         </div>
 
         <div class="row align-items-center g-5">
             <div class="col-lg-7">
-                <div class="section-badge anim-fade-up"><span class="niagara">02</span> — ABOUT ME</div>
-                <h2 class="section-title anim-fade-up"><span class="niagara" style="font-size:inherit;">3+</span> Years of<br>Experience <span class="outline-text">Creative</span> Designer</h2>
+                <div class="section-badge anim-fade-up"><span class="badge-num">02</span> — ABOUT ME</div>
+                <h2 class="section-title anim-fade-up"><span class="title-num">3+</span> Years of<br>Experience <span class="outline-text">Creative</span> Designer</h2>
                 <p class="about-text anim-fade-up">I am a passionate graphic designer and photographer dedicated to creating clean and engaging visual experiences that help brands stand out. I specialize in social media campaigns, logo design, and company profiles, combining creativity with clear and organized design.</p>
                 <p class="about-text anim-fade-up">I enjoy paying attention to details and always aim to create visuals that reflect each brand's personality in a simple and authentic way.</p>
                 <div class="tags-list anim-fade-up">
@@ -150,7 +148,7 @@
                 </div>
             </div>
             <div class="col-lg-5 d-none d-lg-block">
-                <!-- المساحة فارغة لأن الصورة دلوقتي في spider-drop -->
+                <!-- Space for Spider Drop image -->
             </div>
         </div>
     </section>
@@ -160,7 +158,7 @@
         <canvas id="services-canvas" class="section-canvas"></canvas>
 
         <div class="text-center mb-5">
-            <div class="section-badge anim-fade-up"><span class="niagara">03</span> — SERVICES</div>
+            <div class="section-badge anim-fade-up"><span class="badge-num">03</span> — SERVICES</div>
             <h2 class="section-title anim-fade-up">Services & <br><span class="outline-text">Solutions</span></h2>
             <p class="about-text mx-auto anim-fade-up">Every project crafted with precision, creativity, and strategic vision.</p>
         </div>
@@ -170,7 +168,7 @@
                 <div class="service-card-3d" 
                      style="background-image: url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=800&fit=crop'); cursor: pointer;" 
                      data-tilt
-                     onclick="window.open('path-to-your-cv.pdf', '_blank')">
+                     onclick="window.location.href='CV.html'">
                     <div class="service-glow"></div>
                     <div class="service-overlay-3d"></div>
                     <div class="service-num-3d"></div>
@@ -199,7 +197,7 @@
 
             <!-- 02: Advertising Campaigns -->
             <div class="col-md-6 col-lg-4">
-                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=800&fit=crop');" data-tilt>
+                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=800&fit=crop');" data-tilt onclick="window.location.href='service-3.html'">
                     <div class="service-glow"></div>
                     <div class="service-overlay-3d"></div>
                     <div class="service-num-3d">02</div>
@@ -212,7 +210,7 @@
 
             <!-- 03: Brand Identity & Logos -->
             <div class="col-md-6 col-lg-4">
-                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=800&fit=crop');" data-tilt>
+                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=800&fit=crop');" onclick="window.location.href='service-4.html'" data-tilt>
                     <div class="service-glow"></div>
                     <div class="service-overlay-3d"></div>
                     <div class="service-num-3d">03</div>
@@ -225,7 +223,7 @@
 
             <!-- 04: Corporate Profiles -->
             <div class="col-md-6 col-lg-4">
-                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=800&fit=crop');" data-tilt>
+                <div class="service-card-3d" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=800&fit=crop');" onclick="window.location.href='service-5.html'" data-tilt>
                     <div class="service-glow"></div>
                     <div class="service-overlay-3d"></div>
                     <div class="service-num-3d">04</div>
@@ -248,7 +246,7 @@
                     <img src="./Img/2.png" alt="Experience Logo" class="exp-logo-large">
                 </div>
 
-                <div class="section-badge anim-fade-up"><span class="niagara">04</span> — EXPERIENCE</div>
+                <div class="section-badge anim-fade-up"><span class="badge-num">04</span> — EXPERIENCE</div>
                 <h2 class="section-title anim-fade-up">Professional <span class="outline-text">Journey</span></h2>
                 <p class="about-text anim-fade-up">Every role has shaped my creative perspective and enhanced my ability to deliver strategic and visual solutions.</p>
             </div>
@@ -256,7 +254,7 @@
                 <div class="timeline">
                     <!-- Item 1 -->
                     <div class="timeline-item anim-fade-up">
-                        <div class="timeline-date"><span class="niagara">2025</span> — Present</div>
+                        <div class="timeline-date"><span class="year-num">2025</span> — Present</div>
                         <div class="d-flex justify-content-between align-items-start">
                             <div>
                                 <h4 class="timeline-company">Brandology</h4>
@@ -269,7 +267,7 @@
 
                     <!-- Item 2 -->
                     <div class="timeline-item anim-fade-up">
-                        <div class="timeline-date"><span class="niagara">2023</span> — <span class="niagara">2025</span></div>
+                        <div class="timeline-date"><span class="year-num">2023</span> — <span class="year-num">2025</span></div>
                         <h4 class="timeline-company">Al-Motakademah School</h4>
                         <div class="timeline-role">Senior Visual Designer</div>
                         <p class="timeline-desc">Advanced Schools in Saudi Arabia — contributed to visual design work supporting brand identity and institutional communication materials.</p>
@@ -277,7 +275,7 @@
 
                     <!-- Item 3 -->
                     <div class="timeline-item anim-fade-up">
-                        <div class="timeline-date"><span class="niagara">2022</span> — <span class="niagara">2023</span></div>
+                        <div class="timeline-date"><span class="year-num">2022</span> — <span class="year-num">2023</span></div>
                         <h4 class="timeline-company">MISR HOLLANDA CO.</h4>
                         <div class="timeline-role">Junior Brand Designer</div>
                         <p class="timeline-desc">Real estate company — designed the logo for a large residential compound in Aswan and gained practical experience in real estate branding.</p>
@@ -293,7 +291,7 @@
 
         <div class="row g-5">
             <div class="col-lg-5">
-                <div class="section-badge anim-fade-up"><span class="niagara">05</span> — CONTACT</div>
+                <div class="section-badge anim-fade-up"><span class="badge-num">05</span> — CONTACT</div>
                 <h2 class="section-title anim-fade-up">Let's Start <br><span class="outline-text">Your Project</span></h2>
                 <p class="about-text anim-fade-up">Have an idea or project in mind? I'm here to help turn your vision into a unique visual experience.</p>
                <div class="mt-5">
@@ -366,6 +364,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <script src="./index.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>

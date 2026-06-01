@@ -12,19 +12,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styl.css" />
+
   <style>
-    .service-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 40px; text-align: center; }
-    .service-hero h1 { font-size: clamp(60px, 8vw, 100px); font-family: 'Bebas Neue', sans-serif; color: var(--white); margin-bottom: 20px; letter-spacing: 3px; }
-    .service-hero em { color: var(--green); font-style: normal; }
-    .service-hero p { font-size: 18px; color: var(--text-muted); max-width: 600px; line-height: 1.9; margin-bottom: 40px; }
-    .service-content { padding: 80px 40px; background: var(--gray); }
-    .service-back { position: fixed; top: 90px; left: 40px; z-index: 100; }
-    .service-back a { color: var(--green); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 2px; transition: color 0.3s; }
-    .service-back a:hover { color: var(--white); }
-    .welcome-text { display: inline-block; padding: 12px 24px; background: rgba(0,255,106,0.1); border: 1px solid rgba(0,255,106,0.3); color: var(--green); font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 3px; margin-bottom: 20px; }
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f5f0;
+    --green: #00ff6a;
+    --text-muted: #888;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--black);overflow-x:hidden}
+
+  .service-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 40px;text-align:center}
+  .service-hero h1{font-size:clamp(60px,8vw,100px);font-family:'Bebas Neue',sans-serif;color:var(--white);margin-bottom:20px;letter-spacing:3px}
+  .service-hero em{color:var(--green);font-style:normal}
+  .service-hero p{font-size:18px;color:var(--text-muted);max-width:600px;line-height:1.9;margin-bottom:40px}
+
+  .service-back{position:fixed;top:90px;left:40px;z-index:100}
+  .service-back a{color:var(--green);text-decoration:none;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px}
+
+  /* comparison + preview styles (same as service-2) */
+  .image-comparison-section{padding:100px 20px;display:flex;justify-content:center;align-items:center}
+  .comparison-container{position:relative;width:100%;max-width:950px;height:550px;overflow:hidden;border-radius:24px;border:2px solid rgba(0,255,106,0.2);box-shadow:0 0 50px rgba(0,255,106,0.1),inset 0 0 50px rgba(0,255,106,0.05);cursor:ew-resize;user-select:none}
+  .before-image,.after-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .image-overlay{position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden}
+  .slider-line{position:absolute;top:0;left:50%;width:3px;height:100%;background:var(--green);transform:translateX(-50%);z-index:20;box-shadow:0 0 20px rgba(0,255,106,.5)}
+  .slider-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:bold;color:var(--black);z-index:30;box-shadow:0 10px 30px rgba(0,255,106,0.4);cursor:grab}
+  .slider-button:active{cursor:grabbing}
+
+  .long-preview-section{padding:120px 20px;background:var(--black)}
+  .preview-container{width:min(1200px,100%);margin:auto;border-radius:30px;overflow:hidden;border:1px solid rgba(0,255,106,.2);box-shadow:0 0 60px rgba(0,255,106,.08),inset 0 0 40px rgba(255,255,255,.03);background:#111}
+  .long-preview-image{width:100%;display:block}
+
+  #cursor{width:10px;height:10px;background:var(--green);border-radius:50%;position:fixed;pointer-events:none;z-index:9999}
+  #cursor-ring{width:40px;height:40px;border:2px solid var(--green);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;opacity:.5}
+  @media(max-width:768px){.comparison-container{height:350px}.slider-button{width:55px;height:55px;font-size:22px}.service-back{left:20px}}
   </style>
 </head>
 <body>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
   <nav id="navbar">
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-img">
@@ -45,30 +73,24 @@
     <div class="welcome-text">أهلاً وسهلاً</div>
     <h1>Graphic <em>Design</em></h1>
     <p>
-      Modern and visually impactful designs tailored specifically for your brand and business needs. 
-      We create stunning visual solutions that capture attention and communicate your message effectively.
+      Modern and visually impactful designs tailored specifically for your brand and business needs.
     </p>
-    <a href="index.html#contact" class="btn-primary">Get Started</a>
   </section>
 
-  <section class="service-content">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: var(--white); margin-bottom: 20px; letter-spacing: 2px;">
-        What We <em style="color: var(--green);">Deliver</em>
-      </h2>
-      <p style="font-size: 16px; color: var(--text-muted); line-height: 1.9; margin-bottom: 30px;">
-        Our graphic design services encompass a wide range of visual solutions designed to elevate your brand presence:
-      </p>
-      <ul style="font-size: 16px; color: var(--text-muted); line-height: 2; list-style: none; padding-left: 20px;">
-        <li style="margin-bottom: 12px;">✦ Brand identity and logo design</li>
-        <li style="margin-bottom: 12px;">✦ Print materials (brochures, business cards, packaging)</li>
-        <li style="margin-bottom: 12px;">✦ Digital assets and UI design</li>
-        <li style="margin-bottom: 12px;">✦ Illustrations and custom artwork</li>
-        <li style="margin-bottom: 12px;">✦ Marketing collateral and promotional materials</li>
-      </ul>
-      <div style="margin-top: 40px;">
-        <a href="index.html#contact" class="btn-primary" style="display: inline-block;">Contact Me</a>
+  <section class="image-comparison-section">
+    <div class="comparison-container" id="comparisonContainer">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&auto=format&fit=crop" class="before-image" alt="Before">
+      <div class="image-overlay" id="imageOverlay">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&auto=format&fit=crop" class="after-image" alt="After">
       </div>
+      <div class="slider-line" id="sliderLine"></div>
+      <div class="slider-button" id="sliderButton">↔</div>
+    </div>
+  </section>
+
+  <section class="long-preview-section">
+    <div class="preview-container">
+      <img src="./Img/2.png" alt="Full Project Screenshot" class="long-preview-image">
     </div>
   </section>
 
@@ -78,6 +100,23 @@
     <div class="footer-copy">Graphic Designer & Photographer</div>
   </footer>
 
-  <script src="index.js"></script>
+  <script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
+  let ringX = mouseX, ringY = mouseY;
+  document.addEventListener('mousemove',(e)=>{mouseX=e.clientX;mouseY=e.clientY; if(cursor) cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`});
+  function animateCursor(){ringX += (mouseX-ringX)*0.12; ringY += (mouseY-ringY)*0.12; if(ring) ring.style.transform = `translate(${ringX}px, ${ringY}px)`; requestAnimationFrame(animateCursor);}animateCursor();
+
+  const container = document.getElementById('comparisonContainer');
+  const overlay = document.getElementById('imageOverlay');
+  const button = document.getElementById('sliderButton');
+  const line = document.getElementById('sliderLine');
+  let isDragging = false;
+  function moveSlider(clientX){const rect = container.getBoundingClientRect(); let position = clientX - rect.left; position = Math.max(0, Math.min(position, rect.width)); const percent = (position/rect.width)*100; overlay.style.width = percent + '%'; button.style.left = percent + '%'; line.style.left = percent + '%';}
+  container.addEventListener('pointerdown',(e)=>{isDragging = true; moveSlider(e.clientX)});
+  window.addEventListener('pointermove',(e)=>{ if(!isDragging) return; moveSlider(e.clientX);});
+  window.addEventListener('pointerup',()=>{ isDragging = false;});
+  </script>
 </body>
 </html>
