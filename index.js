@@ -3,13 +3,45 @@
         // ============================================
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
-            gsap.to(preloader, { 
-                yPercent: -100, duration: 1, ease: "power4.inOut", delay: 1.5, 
-                onComplete: () => {
-                    preloader.style.display = 'none';
-                    animateHero();
-                }
-            });
+            const logoEl = document.querySelector('.preloader-logo');
+            const textEl = document.querySelector('.preloader-text');
+            const subEl = document.querySelector('.preloader-sub');
+
+            // Split text into spans for letter-by-letter reveal
+            if (textEl && !textEl.querySelector('span')) {
+                const txt = textEl.textContent.trim();
+                textEl.textContent = '';
+                txt.split('').forEach(ch => {
+                    const span = document.createElement('span');
+                    span.textContent = ch === ' ' ? '\u00A0' : ch;
+                    span.style.display = 'inline-block';
+                    textEl.appendChild(span);
+                });
+            }
+
+            // Ensure sub text starts hidden
+            if (subEl) {
+                gsap.set(subEl, { opacity: 0, y: 12 });
+            }
+
+            const tl = gsap.timeline();
+
+            // Logo 3D oscillation (rotate Y left-right)
+            if (logoEl) {
+                tl.to(logoEl, { rotationY: 22, duration: 0.55, ease: 'power1.inOut', repeat: 3, yoyo: true }, 0);
+            }
+
+            // Letter-by-letter reveal
+            tl.to(textEl.querySelectorAll('span'), { opacity: 1, y: 0, duration: 0.42, stagger: 0.07, ease: 'power3.out' }, 0.1);
+
+            // Reveal subtext slightly after
+            tl.to(subEl, { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' }, '-=0.15');
+
+            // After the intro, slide preloader up and remove
+            tl.to(preloader, { yPercent: -100, duration: 1, ease: 'power4.inOut', delay: 0.6, onComplete: () => {
+                preloader.style.display = 'none';
+                animateHero();
+            }});
         });
 
         // ============================================
